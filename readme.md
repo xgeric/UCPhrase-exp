@@ -4,6 +4,8 @@
 
 ```
 wget https://www.dropbox.com/s/1bv7dnjawykjsji/data.zip?dl=0 -O data.zip
+unzip -n data.zip
+rm -r __MACOSX
 ```
 
 ## Step 2: Install and compile dependencies
