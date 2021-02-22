@@ -160,9 +160,3 @@ class SentEvaluator:
         utils.Log.info(f'f1: {f1}')
         utils.Json.dump(eval_result, path_output)
         return path_output
-
-
-if __name__ == '__main__':
-    evaluator = Evaluator(filter_punc=True)
-    evaluator.evaluate('../../20.bertSpanPhrase/data/kp20k/standard/pke.kp20k.test.jsonl')
-    # evaluator.evaluate('../../20.bertSpanPhrase/data/kpTimes/standard/pke.kpTimes.test.jsonl')
