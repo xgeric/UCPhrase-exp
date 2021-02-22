@@ -1,0 +1,13 @@
+src/match/*.so
+*.ipynb
+*.DS_Store
+*/__pycache__
+sftp-config.json
+experiments*
+data/*/standard*
+tmp*
+.vscode
+src/_tmp*.py
+**/__pycache__/
+*Icon?
+*__pycache__

@@ -1,0 +1,17 @@
+{
+    "lm_name": "allenai/cs_roberta_base",
+    "path_tagging_docs": "./standard/devdata.tagging.docs.jsonl",
+    "paths_tagging_human": [
+        "./standard/devdata.tagging.human_0.json",
+        "./standard/devdata.tagging.human_1.json",
+        "./standard/devdata.tagging.human_2.json"
+    ],
+    "path_test": "./standard/devdata.test.jsonl",
+    "path_train": "./standard/devdata.train.jsonl",
+    "path_phrase": "../wiki_quality.txt",
+    "path_stopwords": "../stopwords.txt",
+    "path_stem_test": "./standard/stem.devdata.test.jsonl",
+    "path_stem_train": "./standard/stem.devdata.train.jsonl",
+    "path_stem_doc2references": "./standard/stem.doc2references.json",
+    "kp_num_candidates_per_doc": 18.3
+}

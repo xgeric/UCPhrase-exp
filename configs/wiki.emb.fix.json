@@ -1,0 +1,6 @@
+{
+    "model": "emb",
+    "annotator": "wiki",
+    "finetune": false,
+    "threshold": 0.1
+}
