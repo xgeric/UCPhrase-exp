@@ -1,8 +1,10 @@
 # UCPhrase
 
-## Step 1: Download the data folder
+## Step 1: Download and uncompress the data folder
 
-[Dropbox Link](https://www.dropbox.com/s/g3geqm4q44kr7nh/data.zip?dl=0)
+```
+wget https://www.dropbox.com/s/1bv7dnjawykjsji/data.zip?dl=0 -O data.zip
+```
 
 ## Step 2: Install and compile dependencies
 
