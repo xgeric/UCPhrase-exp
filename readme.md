@@ -1,6 +1,6 @@
 # UCPhrase
 
-## Step 1: Download and uncompress the data folder
+## Step 1: Download and unzip the data folder
 
 ```
 wget https://www.dropbox.com/s/1bv7dnjawykjsji/data.zip?dl=0 -O data.zip
