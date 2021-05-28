@@ -31,6 +31,7 @@ class Experiment:
         self.dir_exp = self.rootdir / self.exp_name
         self.dir_exp.mkdir(exist_ok=True)
         utils.Json.dump(self.config, self.dir_exp / 'config.json')
+        print(f'Experiment outputs will be saved to {self.dir_exp}')
 
         # preprocessor
         self.train_preprocessor = Preprocessor(
