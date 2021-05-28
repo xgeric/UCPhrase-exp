@@ -40,6 +40,8 @@ cd src
 python exp.py --gpu 0 --dir_data ../data/devdata
 ```
 
+Model checkpoint and output files will be stored under the generated "experiments" folder.
+
 ## Citation
 If you find the implementation useful, please consider citing the following paper:
 
