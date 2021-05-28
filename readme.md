@@ -12,7 +12,7 @@ For model training, we seek to alleviate the need for human annotation and exter
 
 ![image](https://user-images.githubusercontent.com/20608184/119922556-a78ade80-bf35-11eb-9b1c-32982ba744d3.png)
 
-We compare our method with existing ones on the KP20k dataset (publication data from CS domain) and the KPTimes dataset (news articles). UCPhrase significantly outperforms prior arts without supervision. Compared with off-the-shelf phrase tagging tools, UCPhrase also show unique advantages, especially in its ability to generalize to new domains without reliance on manually curated labels or KBs. We provide comprehensive case studies to demonstrate the comparison among different tagging methods. We also have some interesting findings in the discussion sections.
+We compare our method with existing ones on the KP20k dataset (publication data from CS domain) and the KPTimes dataset (news articles). UCPhrase significantly outperforms prior arts without supervision. Compared with off-the-shelf phrase tagging tools, UCPhrase also show unique advantages, especially in its ability to generalize to specific domains without reliance on manually curated labels or KBs. We provide comprehensive case studies to demonstrate the comparison among different tagging methods. We also have some interesting findings in the discussion sections.
 
 We aim to build UCPhrase as a practical tool for phrase tagging, though it is certainly far from perfect. Please feel free to try on your own corpus and give us feedbacks if you have any ideas that can help build better phrase tagging tools!
 
