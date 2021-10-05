@@ -40,7 +40,22 @@ cd src
 python exp.py --gpu 0 --dir_data ../data/devdata
 ```
 
+
+
+The result files are organized under `experiments/${expname}/model`:
+
+- `kpcand.decoded.epoch-${best_epoch}/eval.doc2cands-xxx.json`
+  - results of document-level candidate phrase extraction in the form of "docid": [phrases].
+  - these phrases serve as the candidates of the phrase ranking phase for keyphrase extraction.
+- `tagging.decoded.epoch-${best_epoch}/doc2sents-xxx.json`
+  - results of sentence-level phrase tagging in the form of a dictionary.
+  - Each key is a document id.
+  - The value is a list of sentences in the document. 
+  - Each sentence consists of its tokenized wordpieces ("tokens"), and the tagged phrases ("spans").
+  - Each span is a tuple of (start_token_index, end_token_index, surface_string).
+
 ## Citation
+
 If you find the implementation useful, please consider citing the following paper:
 
 Xiaotao Gu*, Zihan Wang*, Zhenyu Bi, Yu Meng, Liyuan Liu, Jiawei Han, Jingbo Shang, "UCPhrase: Unsupervised Context-aware Quality Phrase Tagging", in Proc. of 2021 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'21), Aug. 2021
