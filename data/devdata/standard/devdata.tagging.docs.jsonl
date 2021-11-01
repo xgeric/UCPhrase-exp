@@ -1,0 +1,200 @@
+{"_id_": 43387, "sents": ["Probabilistic equivalence checking of multiple-valued functions ."]}
+{"_id_": 43388, "sents": ["This paper describes a probabilistic method for verifying the equivalence of two multiple-valued functions ."]}
+{"_id_": 43389, "sents": ["Each function is hashed to an integer code by transforming it to a integer-valued polynomial and evaluating it for values of variables taken independently and uniformly at random from a finite field ."]}
+{"_id_": 43390, "sents": ["Since the polynomial is unique for a given function , if two hash codes are different , then the functions are not equivalent ."]}
+{"_id_": 43391, "sents": ["However , if two hash codes are the same , the functions may or may not be equivalent , because different polynomials may happen to hash to the same code ."]}
+{"_id_": 43392, "sents": ["Thus , the method presented in this paper determines the equivalence of two functions with a known ( small ) probability of error , arising from collisions between inequivalent functions ."]}
+{"_id_": 43393, "sents": ["Such a method seems to be an attractive alternative for verifying functions that are too large to be handled by deterministic equivalence checking methods ."]}
+{"_id_": 43394, "sents": ["A model and environment for improving multimedia scholarly reading practices ."]}
+{"_id_": 43395, "sents": ["The evolution of multimedia document production and diffusion technologies has lead to a significant spread of knowledge in form of pictures and recordings ."]}
+{"_id_": 43396, "sents": ["However , scholarly reading tasks are still principally performed on textual contents ."]}
+{"_id_": 43397, "sents": ["We argue that this is due to a lack of critical and structured tools : ( 1 ) to handle the wide spectrum of interpretive operations involved by the polymorphous scholarly reading process ; ( 2 ) to perform these operations on a heterogeneous multimedia corpus ."]}
+{"_id_": 43398, "sents": ["This firstly calls for identifying fundamental document requirements for such reading practices ."]}
+{"_id_": 43399, "sents": ["Then , we present a flexible model and a software environment which enable the reader to structure , annotate , link , fragment , compare , freely organise and spatially lay out documents , and to prepare the writing of their critical comment ."]}
+{"_id_": 43400, "sents": ["We eventually discuss experiments with humanities scholars , and explore new academic reading practices which take advantage of document engineering principles such as multimedia document structuring , publication or sharing ."]}
+{"_id_": 43401, "sents": ["sensor selection for energy-efficient ambulatory medical monitoring ."]}
+{"_id_": 43402, "sents": ["Epilepsy affects over three million Americans of all ages ."]}
+{"_id_": 43403, "sents": ["Despite recent advances , more than 20 % of individuals with epilepsy never achieve adequate control of their seizures ."]}
+{"_id_": 43404, "sents": ["The use of a small , portable , non-invasive seizure monitor could benefit these individuals tremendously ."]}
+{"_id_": 43405, "sents": ["However , in order for such a device to be suitable for long-term wear , it must be both comfortable and lightweight ."]}
+{"_id_": 43406, "sents": ["Typical state-of-the-art non-invasive seizure onset detection algorithms require 21 scalp electrodes to be placed on the head ."]}
+{"_id_": 43407, "sents": ["These electrodes are used to generate 18 data streams , called channels ."]}
+{"_id_": 43408, "sents": ["The large number of electrodes is inconvenient for the patient and processing 18 channels can consume a considerable amount of energy , a problem for a battery-powered device ."]}
+{"_id_": 43409, "sents": ["In this paper , we describe an automated way to construct detectors that use fewer channels , and thus fewer electrodes ."]}
+{"_id_": 43410, "sents": ["Starting from an existing technique for constructing 18 channel patient-specific detectors , we use machine learning to automatically construct reduced channel detectors ."]}
+{"_id_": 43411, "sents": ["We evaluate our algorithm on data from 16 patients used in an earlier study ."]}
+{"_id_": 43412, "sents": ["On average , our algorithm reduced the number of channels from 18 to 4.6 while decreasing the mean fraction of seizure onsets detected from 99 % to 97 % ."]}
+{"_id_": 43413, "sents": ["For 12 out of the 16 patients , there was no degradation in the detection rate ."]}
+{"_id_": 43414, "sents": ["While the average detection latency increased from 7.8 s to 11.2 s , the average rate of false alarms per hour decreased from 0.35 to 0.19 ."]}
+{"_id_": 43415, "sents": ["We also describe a prototype implementation of a single channel EEG monitoring device built using off-the-shelf components , and use this implementation to derive an energy consumption model ."]}
+{"_id_": 43416, "sents": ["Using fewer channels reduced the average energy consumption by 69 % , which amounts to a 3.3x increase in battery lifetime ."]}
+{"_id_": 43417, "sents": ["Finally , we show how additional energy savings can be realized by using a low-power screening detector to rule out segments of data that are obviously not seizures ."]}
+{"_id_": 43418, "sents": ["Though this technique does not reduce the number of electrodes needed , it does reduce the energy consumption by an additional 16 % ."]}
+{"_id_": 43419, "sents": ["process synchronization without long-term interlock ."]}
+{"_id_": 43420, "sents": ["A technique is presented for replacing long-term interlocking of shared data by the possible repetition of unprivileged code in case a version number ( associated with the shared data ) has been changed by another process ."]}
+{"_id_": 43421, "sents": ["Four principles of operating system architecture ( which have desirable effects on the intrinsic reliability of a system ) are presented ; implementation of a system adhering to these principles requires that long-term lockout be avoided ."]}
+{"_id_": 43422, "sents": ["Application of an artificial immune system-based fuzzy neural network to a RFID-based positioning system ."]}
+{"_id_": 43423, "sents": ["Due to the rapid development of globalization , which makes supply chain management more complicated , more companies are applying radio frequency identification ( RFID ) , in warehouse management ."]}
+{"_id_": 43424, "sents": ["The obvious advantages of RFID are its ability to scan at high-speed , its penetration and memory ."]}
+{"_id_": 43425, "sents": ["In addition to recycling , use of a RFID system can also reduce business costs , by indentifying the position of goods and picking carts ."]}
+{"_id_": 43426, "sents": ["This study proposes an artificial immune system ( AIS )-based fuzzy neural network ( FNN ) , to learn the relationship between the RFID signals and the picking cart's position ."]}
+{"_id_": 43427, "sents": ["Since the proposed network has the merits of both AIS and FNN ."]}
+{"_id_": 43428, "sents": ["it is able to avoid falling into the local optimum and possesses a learning capability ."]}
+{"_id_": 43429, "sents": ["The results of the evaluation of the model show that the proposed AIS-based FNN really can predict the picking cart position more precisely than conventional FNN and , unlike an artificial neural network , it is much easier to interpret the training results , since they are in the form of fuzzy IF-THEN rules ."]}
+{"_id_": 43430, "sents": ["Single-dimension multidimensional software pipelining for loops ."]}
+{"_id_": 43431, "sents": ["Traditionally , software pipelining is applied either to the innermost loop of a given loop nest or from the innermost loop to outer loops ."]}
+{"_id_": 43432, "sents": ["This paper proposes a three-step approach , called single-dimension software pipelining ( SSP ) , to software pipeline a loop nest at an arbitrary loop level that has a rectangular iteration space and contains no sibling inner loops in it ."]}
+{"_id_": 43433, "sents": ["The first step identifies the most profitable loop level for software pipelining in terms of initiation rate , data reuse potential , or any other optimization criteria ."]}
+{"_id_": 43434, "sents": ["The second step simplifies the multidimensional data-dependence graph ( DDG ) of the selected loop level into a one-dimensional DDG and constructs a one-dimensional ( 1D ) schedule ."]}
+{"_id_": 43435, "sents": ["Based on the one-dimensional schedule , the third step derives a simple mapping function that specifies the schedule time for the operation instances in the multidimensional loop ."]}
+{"_id_": 43436, "sents": ["The classical modulo scheduling is subsumed by SSP as a special case ."]}
+{"_id_": 43437, "sents": ["SSP is also closely related to hyperplane scheduling , and , in fact , extends it to be resource constrained ."]}
+{"_id_": 43438, "sents": ["We prove that SSP schedules are correct and at least as efficient as those schedules generated by traditional modulo scheduling methods ."]}
+{"_id_": 43439, "sents": ["We extend SSP to schedule imperfect loop nests , which are most common at the instruction level ."]}
+{"_id_": 43440, "sents": ["Multiple initiation intervals are naturally allowed to improve execution efficiency ."]}
+{"_id_": 43441, "sents": ["Feasibility and correctness of our approach are verified by a prototype implementation in the ORC compiler for the IA-64 architecture , tested with loop nests from Livermore and SPEC2000 floating-point benchmarks ."]}
+{"_id_": 43442, "sents": ["Preliminary experimental results reveal that , compared to modulo scheduling , software pipelining at an appropriate loop level results in significant performance improvement ."]}
+{"_id_": 43443, "sents": ["Software pipelining is beneficial even with prior loop transformations ."]}
+{"_id_": 43444, "sents": ["A geometric-based method for recognizing overlapping polygonal-shaped and semi-transparent particles in gray tone images ."]}
+{"_id_": 43445, "sents": ["A geometric-based method is proposed to recognize the overlapping particles of different polygonal shapes such as rectangular , regular and / or irregular prismatic particles in a gray tone image ."]}
+{"_id_": 43446, "sents": ["The first step consists in extracting the salient corners , identified by their locations and orientations , of the overlapping particles ."]}
+{"_id_": 43447, "sents": ["Although there are certain difficulties like the perspective geometric projection , out of focus , transparency and superposition of the studied particles ."]}
+{"_id_": 43448, "sents": ["Then , a new clustering technique is applied to detect the shape by grouping its correspondent salient corners according to the geometric properties of each shape ."]}
+{"_id_": 43449, "sents": ["A simulation process is carried out for evaluating the performance of the proposed method ."]}
+{"_id_": 43450, "sents": ["Then , it is particularly applied on a real application of batch cooling crystallization of the ammonium oxalate in pure water ."]}
+{"_id_": 43451, "sents": ["The experimental results show that the method is efficient to recognize the overlapping particles of different shapes and sizes ."]}
+{"_id_": 43452, "sents": ["EXPLICIT DIMENSION REDUCTION AND ITS APPLICATIONS ."]}
+{"_id_": 43453, "sents": ["We construct a small set of explicit linear transformations mapping R-n to R-t , where t = O ( log ( gamma (-1 ) ) epsilon (-2 ) ) , such that the L-2 norm of any vector in R-n is distorted by at most 1 + /-epsilon in at least a fraction of 1-gamma of the transformations in the set ."]}
+{"_id_": 43454, "sents": ["Albeit the tradeoff between the size of the set and the success probability is suboptimal compared with probabilistic arguments , we nevertheless are able to apply our construction to a number of problems ."]}
+{"_id_": 43455, "sents": ["In particular , we use it to construct an epsilon-sample ( or pseudorandom generator ) for linear threshold functions on Sn-1 for epsilon = o ( 1 ) ."]}
+{"_id_": 43456, "sents": ["We also use it to construct an epsilon-sample for spherical digons in Sn-1 for epsilon = o ( 1 ) ."]}
+{"_id_": 43457, "sents": ["This construction leads to an efficient oblivious derandomization of the Goemans-Williamson Max-Cut algorithm and similar approximation algorithms ( i.e ."]}
+{"_id_": 43458, "sents": [", we construct a small set of hyperplanes such that for any instance we can choose one of them to generate a good solution ) ."]}
+{"_id_": 43459, "sents": ["Our technique for constructing an epsilon-sample for linear threshold functions on the sphere is considerably different than previous techniques that rely on k-wise independent sample spaces ."]}
+{"_id_": 43460, "sents": ["Capital One Financial and a decade of experience with newly vulnerable markets : Some propositions concerning the competitive advantage of new entrants ."]}
+{"_id_": 43461, "sents": ["Market share and brand recognition have historically provided advantage to established players in mature industries ."]}
+{"_id_": 43462, "sents": ["The success of Capital One , an attacker in the mature credit card industry is therefore interesting , both to researchers and to executives developing strategies ."]}
+{"_id_": 43463, "sents": ["A partial explanation is offered by the theory of newly vulnerable markets ."]}
+{"_id_": 43464, "sents": ["The success of Capital One can be partially attributed to its application of information-based strategies to several newly vulnerable markets , allowing it to target and retain the most profitable customers ."]}
+{"_id_": 43465, "sents": ["These strategies sustained double-digit return on equity and double-digit increase in sales volume and profits every year of our study ."]}
+{"_id_": 43466, "sents": ["scene analysis and geometric homology ."]}
+{"_id_": 43467, "sents": ["During the last 10-12 years there has been a dramatic revival of interest in applied geometric problems ."]}
+{"_id_": 43468, "sents": ["Geometers have reconsidered a number of questions in infinitesimal mechanics , questions treated by J.C ."]}
+{"_id_": 43469, "sents": ["Maxwell and L ."]}
+{"_id_": 43470, "sents": ["Cremona in 1864-70 , further developed under the banner of graphical statics , but left largely untouched since the end of the nineteenth century ."]}
+{"_id_": 43471, "sents": ["At the same time , computer scientists have come to recognize that the tools of graphical statics and of applied projective geometry are fundamental to research in scene analysis ."]}
+{"_id_": 43472, "sents": ["A good deal of the recent revival of interest is due to the efforts of the Structural Topology research group at the University of Montreal ."]}
+{"_id_": 43473, "sents": ["The work of this group , reported in the pages of the journal Structural Topology ( and elsewhere ) , was a biproduct of research on infinitesimal mechanics , using methods derived from graphical statics , as well as from exterior algebra and its modern offspring , the Doubilet-Rota-Stein double algebra ."]}
+{"_id_": 43474, "sents": ["Independently , Huffman , Duda and Hart , and others recognized that Maxwell's reciprocal figures could help in deciding whether a given plane image is the projection of a 3D polyhedral scene ."]}
+{"_id_": 43475, "sents": ["More recently , Sugihara and his colleagues in Nagoya created what may be considered a pilot project for automated descriptive geometry ."]}
+{"_id_": 43476, "sents": ["They wrote a software package capable of modifying a rough plane sketch , so as to make it a true projection of a 3D scene ."]}
+{"_id_": 43477, "sents": ["The starting point of the During the last 10-12 years there has been a dramatic revival of interest in applied geometric problems ."]}
+{"_id_": 43478, "sents": ["Geometers have reconsidered a number of questions in infinitesimal mechanics , questions treated by J.C ."]}
+{"_id_": 43479, "sents": ["Maxwell and L ."]}
+{"_id_": 43480, "sents": ["Cremona in 1864-70 , further developed under the banner of graphical statics , but left largely untouched since the end of the nineteenth century ."]}
+{"_id_": 43481, "sents": ["At the same time , computer scientists have come to recognize that the tools of graphical statics and of applied projective geometry are fundamental to research in scene analysis ."]}
+{"_id_": 43482, "sents": ["A good deal of the recent revival of interest is due to the efforts of the Structural Topology research group at the University of Montreal ."]}
+{"_id_": 43483, "sents": ["The work of this group , reported in the pages of the journal Structural Topology ( and elsewhere ) , was a biproduct of research on infinitesimal mechanics , using methods derived from graphical statics , as well as from exterior a ."]}
+{"_id_": 43484, "sents": ["Independently , Huffman , Duda and Hart , and others recognized that Maxwell's reciprocal figures could help in deciding whether a given plane image is the projection of a 3D polyhedral scene ."]}
+{"_id_": 43485, "sents": ["More recently , Sugihara and his colleagues in Nagoya created what may be considered a pilot project for automated descriptive geometry ."]}
+{"_id_": 43486, "sents": ["They wrote a software package capable of modifying a rough plane sketch , so as to make it a true projection of a 3D scene ."]}
+{"_id_": 43487, "sents": ["The starting point of the projective geometric analysis of scenes is the observation that the set of all three-dimensional realizations ( scenes ) having a given two-dimensional projection ( a drawing , or image ) form a linear space ."]}
+{"_id_": 43488, "sents": ["Much information about an image , and about its possible spatial interpretations , can be obtained simply by calculating ( either locally or globally ) the linear dimension ( or rank ) of its linear space of scenes ."]}
+{"_id_": 43489, "sents": ["In practice , the image is a pattern on a cathode-ray tube , an aerial photograph , an engineer's or architect's drawing , or an X-ray or NMR scan ."]}
+{"_id_": 43490, "sents": ["The rank of its space of scenes will reveal whether there is ambiguity or uniqueness in the construction of its spatial interpretation , or whether such a construction is in fact impossible , as would be the case for a poorly conceived engineering drawing , or even in an otherwise correctly conceived drawing , if too many hypotheses are made concerning the 3D structure of the scene ."]}
+{"_id_": 43491, "sents": ["Calculation of the rank of the space of scenes having a given image should , in principle , be accomplished using simple combinatorial algorithms based on easily-remembered rules-of-thumb ."]}
+{"_id_": 43492, "sents": ["This is the goal , and it shows every sign of being achievable ."]}
+{"_id_": 43493, "sents": ["The problem has , however , a certain degree of unavoidable difficulty ."]}
+{"_id_": 43494, "sents": ["The requirement that a given image be an accurate projection of a non-trivial ( non-planar ) 3D scene imposes conditions on the image , conditions which are perhaps best described in terms of not-always-elementary constructions with straight-edge and pencil ."]}
+{"_id_": 43495, "sents": ["In this paper , we begin to sort out the interplay of these projective conditions by creating a new homology theory for geometric configurations ."]}
+{"_id_": 43496, "sents": ["The new homology theory applies to geometric objects which are more rigid , less pliable , than the rubber sheets studied by the topology of Henri Poincar and his school ."]}
+{"_id_": 43497, "sents": ["The passage to this higher degree of invariance is made possible by the creation of a homology theory with ( restricted ) vector , rather than ( unrestricted ) scalar , coefficients , or equivalently , by the use of a cohomology theory based on locally linear , rather than on locally constant , functions ."]}
+{"_id_": 43498, "sents": ["We have verified that the new theory agrees with the cohomology theory for the sheaf of locally linear functions on a certain ( combinatorially defined ) topological space ."]}
+{"_id_": 43499, "sents": ["The basic objects about which this new homology theory has something non-trivial to say are extremely general ."]}
+{"_id_": 43500, "sents": ["From the geometric point of view , they are simply finite sets of points in a projective space or finite sets of vectors in a vector space ."]}
+{"_id_": 43501, "sents": ["In order to emphasize the departure we take from linear algebra as it is usually practiced , we should say that we study vector spaces with a selected basis , that is , concrete vector spaces , in their usual representation as spaces F P of functions from a set P into a field F ."]}
+{"_id_": 43502, "sents": ["Finally , we might say we are simply studying rectangular matrices ."]}
+{"_id_": 43503, "sents": ["Since such objects are found throughout applied mathematics , the resulting homology theory has a very broad range of potential application ."]}
+{"_id_": 43504, "sents": ["Indeed , potential applications of this new homology theory are to any domain where one is interested in the global behavior of systems determined locally by linear constraints ."]}
+{"_id_": 43505, "sents": ["ImageSense : Towards Contextual Image Advertising ."]}
+{"_id_": 43506, "sents": ["The daunting volumes of community-contributed media contents on the Internet have become one of the primary sources for online advertising ."]}
+{"_id_": 43507, "sents": ["However , conventional advertising treats image and video advertising as general text advertising by displaying relevant ads based on the contents of the Web page , without considering the inherent characteristics of visual contents ."]}
+{"_id_": 43508, "sents": ["This article presents a contextual advertising system driven by images , which automatically associates relevant ads with an image rather than the entire text in a Web page and seamlessly inserts the ads in the nonintrusive areas within each individual image ."]}
+{"_id_": 43509, "sents": ["The proposed system , called ImageSense , supports scalable advertising of , from root to node , Web sites , pages , and images ."]}
+{"_id_": 43510, "sents": ["In ImageSense , the ads are selected based on not only textual relevance but also visual similarity , so that the ads yield contextual relevance to both the text in the Web page and the image content ."]}
+{"_id_": 43511, "sents": ["The ad insertion positions are detected based on image salience , as well as face and text detection , to minimize intrusiveness to the user ."]}
+{"_id_": 43512, "sents": ["We evaluate ImageSense on a large-scale real-world images and Web pages , and demonstrate the effectiveness of ImageSense for online image advertising ."]}
+{"_id_": 43513, "sents": ["Construction and Blind Estimation of Phase Sequences for Subcarrier-Phase Control Based PAPR Reduction in LDPC Coded OFDM Systems ."]}
+{"_id_": 43514, "sents": ["As described in this paper construction and blind estimation methods of phase sequences are proposed for subcarrier phase control based peak to average power ratio ( PAPR ) reduction in low density parity check ( LDPC ) coded orthogonal frequency division multiplexing ( OFDM ) systems ."]}
+{"_id_": 43515, "sents": ["On the transmitter side phase sequence patterns are constructed based on a given parity check matrix ."]}
+{"_id_": 43516, "sents": ["The PAPR of the OFDM signal is reduced by multiplying the constructed phase sequence selected from the same number of candidates as the number of weighting factor ( WF ) combinations in a partial transmit sequence ( PTS ) method ."]}
+{"_id_": 43517, "sents": ["On the receiver side the phase sequence is estimated blindly using the decoding function i e the most likely phase sequence among a limited number of possible phase sequence candidates is inferred by comparing the sum product calculation results of each candidate ."]}
+{"_id_": 43518, "sents": ["Computer simulation results show that PAPR of QPSK OFDM and 16QAM OFDM signals can be reduced respectively by about 3 7 dB and 4 0 dB without marked degradation of the block error rate ( BLER ) performance as compared to perfect estimation in an attenuated 12 path Rayleigh fading condition ."]}
+{"_id_": 43519, "sents": ["MATHSAT : Tight integration of SAT and mathematical decision procedures ."]}
+{"_id_": 43520, "sents": ["Recent improvements in propositional satisfiability techniques ( SAT ) made it possible to tackle successfully some hard real-world problems ( e.g. , model-checking , circuit testing , propositional planning ) by encoding into SAT ."]}
+{"_id_": 43521, "sents": ["However , a purely Boolean representation is not expressive enough for many other real-world applications , including the verification of timed and hybrid systems , of proof obligations in software , and of circuit design at RTL level ."]}
+{"_id_": 43522, "sents": ["These problems can be naturally modeled as satisfiability in linear arithmetic logic ( LAL ) , that is , the Boolean combination of propositional variables and linear constraints over numerical variables ."]}
+{"_id_": 43523, "sents": ["In this paper we present MATHSAT , a new , SAT-based decision procedure for LAL , based on the ( known approach ) of integrating a state-of-the-art SAT solver with a dedicated mathematical solver for LAL ."]}
+{"_id_": 43524, "sents": ["We improve MATHSAT in two different directions ."]}
+{"_id_": 43525, "sents": ["First , the top-level line procedure is enhanced and now features a tighter integration between the Boolean search and the mathematical solver ."]}
+{"_id_": 43526, "sents": ["In particular , we allow for theory-driven backjumping and learning , and theory-driven deduction ; we use static learning in order to reduce the number of Boolean models that are mathematically inconsistent ; we exploit problem clustering in order to partition mathematical reasoning ; and we define a stack-based interface that allows us to implement mathematical reasoning in an incremental and backtrackable way ."]}
+{"_id_": 43527, "sents": ["Second , the mathematical solver is based on layering ; that is , the consistency of ( partial ) assignments is checked in theories of increasing strength ( equality and uninterpreted functions , linear arithmetic over the reals , linear arithmetic over the integers ) ."]}
+{"_id_": 43528, "sents": ["For each of these layers , a dedicated ( sub ) solver is used ."]}
+{"_id_": 43529, "sents": ["Cheaper solvers are called first , and detection of inconsistency makes call of the subsequent solvers superfluous ."]}
+{"_id_": 43530, "sents": ["We provide a through experimental evaluation of our approach , by taking into account a large set of previously proposed benchmarks ."]}
+{"_id_": 43531, "sents": ["We first investigate the relative benefits and drawbacks of each proposed technique by comparison with respect to a reference option setting ."]}
+{"_id_": 43532, "sents": ["We then demonstrate the global effectiveness of our approach by a comparison with several state-of-the-art decision procedures ."]}
+{"_id_": 43533, "sents": ["We show that the behavior of MATHSAT is often superior to its competitors , both on LAL and in the subclass of difference logic ."]}
+{"_id_": 43534, "sents": ["Strongly regular graphs with the ( 7 )-vertex condition ."]}
+{"_id_": 43535, "sents": ["The ( t )-vertex condition , for an integer ( tge 2 ) , was introduced by Hestenes and Higman ( SIAM Am Math Soc Proc 4 : 41160 , 1971 ) providing a combinatorial invariant defined on edges and non-edges of a graph ."]}
+{"_id_": 43536, "sents": ["Finite rank 3 graphs satisfy the condition for all values of ( t ) ."]}
+{"_id_": 43537, "sents": ["Moreover , a long-standing conjecture of Klin asserts the existence of an integer ( t_0 ) such that a graph satisfies the ( t_0 )-vertex condition if and only if it is a rank 3 graph ."]}
+{"_id_": 43538, "sents": ["We present the first infinite family of non-rank 3 strongly regular graphs satisfying the ( 7 )-vertex condition ."]}
+{"_id_": 43539, "sents": ["This implies that the Klin parameter ( t_0 ) is at least 8 ."]}
+{"_id_": 43540, "sents": ["The examples are the point graphs of a certain family of generalized quadrangles ."]}
+{"_id_": 43541, "sents": ["( ( epsilon )-) Efficiency in difference vector optimization ."]}
+{"_id_": 43542, "sents": ["The paper deals with the problem of characterizing Pareto optima ( efficient solutions ) for the difference of two mappings vector-valued in a finite or infinite-dimensional preordered space ."]}
+{"_id_": 43543, "sents": ["Closely related to the well-known optimality criterion of scalar DC optimization , a mixed vectorial condition is obtained in terms of both strong ( Fenchel ) and weak ( Pareto ) ( epsilon )-subdifferentials that completely characterizes the exact or approximate weak efficiency ."]}
+{"_id_": 43544, "sents": ["This condition also allows to deal with some special restricted mappings ."]}
+{"_id_": 43545, "sents": ["Moreover , the condition established in the literature in terms of strong ( epsilon )-subdifferentials for characterizing the strongly efficient solutions ( usual optima ) , is shown here to remain valid without assuming that the objective space is order-complete ."]}
+{"_id_": 43546, "sents": ["iterative visual clustering for unstructured text mining ."]}
+{"_id_": 43547, "sents": ["This paper proposes the iterative visual clustering ( IVC ) on unstructured text sequences to form and evaluate keyword clusters , based on which users can use visual analysis , domain knowledge to discover knowledge in the text ."]}
+{"_id_": 43548, "sents": ["The text sequence data are broken down into a list representative keywords after textual evaluation , and the keywords are then grouped to form keyword clusters via an iterative stochastic process and are visualized as distributions over the time lines ."]}
+{"_id_": 43549, "sents": ["The visual evaluation model provides shape evaluations as quantitative tools and users \" interactions as qualitative tools to visually investigate the trends , patterns represented by the keyword clusters \" distributions ."]}
+{"_id_": 43550, "sents": ["The keyword clustering model , guided by the feedback of visual evaluations , step-wisely enumerates newer generations of keyword clusters and their patterns , therefore narrows down the search space ."]}
+{"_id_": 43551, "sents": ["Then the proposed IVC is applied onto nursing narratives and is able to identify interesting keyword clusters implying hidden knowledge regarding to the working patterns and environment of registered nurses ."]}
+{"_id_": 43552, "sents": ["The loop of producing next generation of keyword clusters in IVC is driven and controlled by users \" perception , domain knowledge and interactions , and it is also guided by a stochastic search model ."]}
+{"_id_": 43553, "sents": ["So both semantic and distribution features enable IVC to have significant applications as a text mining tool , on many other data sets , such as biomedical literatures ."]}
+{"_id_": 43554, "sents": ["Economic growth , telecommunications development and productivity growth of the telecommunications sector : Evidence around the world ."]}
+{"_id_": 43555, "sents": ["This paper studies the relationships between economic growth , telecommunications development and productivity growth of the telecommunications sector in different countries and regions of the world ."]}
+{"_id_": 43556, "sents": ["In particular , this study assesses the impact of mobile telecommunications on economic growth and telecommunications productivity ."]}
+{"_id_": 43557, "sents": ["The results indicate that there is a bidirectional relationship between real gross domestic product ( GDP ) and telecommunications development ( as measured by teledensity ) for European and high-income countries ."]}
+{"_id_": 43558, "sents": ["However , when the impact of mobile telecommunications development on economic growth is measured separately , the bi-directional relationship is no longer restricted to European and high-income countries ."]}
+{"_id_": 43559, "sents": ["This study also finds that countries in the upper-middle income group have achieved a higher average total factor productivity ( TFP ) growth than other countries ."]}
+{"_id_": 43560, "sents": ["Countries with competition and privatization in telecommunications have achieved a higher TFP growth than those without competition and privatization ."]}
+{"_id_": 43561, "sents": ["The diffusion of mobile telecommunications services is found to be a significant factor that has improved the TFP growth of the telecommunications sector in Central and Eastern Europe ( CEE ) ."]}
+{"_id_": 43562, "sents": ["Examining learning from text and pictures for different task types : Does the multimedia effect differ for conceptual , causal , and procedural tasks ."]}
+{"_id_": 43563, "sents": ["The multimedia effect ( ME ) is a well-researched effect in the field of learning and instruction ."]}
+{"_id_": 43564, "sents": ["In this article , two views that explain the ME are compared ."]}
+{"_id_": 43565, "sents": ["The outcome-oriented view focuses on the beneficial effect of text and pictures on mental representations , whereas the process-oriented view focuses on the beneficial effect of text and pictures for information processing ."]}
+{"_id_": 43566, "sents": ["To contrast these views , the ME sizes for different task types were compared ( i.e ."]}
+{"_id_": 43567, "sents": [", conceptual , causal , procedural tasks ) ."]}
+{"_id_": 43568, "sents": ["Whereas the outcome-oriented view predicts no differences in ME size , the process-oriented view predicts that the ME is largest in causal tasks , smaller in procedural tasks , and smallest in conceptual tasks ."]}
+{"_id_": 43569, "sents": ["Sixty-five students learnt with text only or with text and pictures ."]}
+{"_id_": 43570, "sents": ["Task type and information source ( i.e ."]}
+{"_id_": 43571, "sents": [", whether the text , picture , or text and picture provided the answer to a post-test question ) were varied within subjects ."]}
+{"_id_": 43572, "sents": ["The results showed that , in line with the process-oriented view , the ME was smaller for conceptual tasks than for procedural tasks ."]}
+{"_id_": 43573, "sents": ["Contrary to the expectations , the ME was larger in procedural tasks than in causal tasks ."]}
+{"_id_": 43574, "sents": ["Moreover , the pattern of results varied with information source ."]}
+{"_id_": 43575, "sents": ["Research and practical implications are described , so that pictures can be deployed optimally ."]}
+{"_id_": 43576, "sents": ["Sufficient conditions for lambda \"-optimality of graphs with small conditional diameter ."]}
+{"_id_": 43577, "sents": ["A restricted edge-cut S of a connected graph G is an edge-cut such that G-S has no isolated vertex ."]}
+{"_id_": 43578, "sents": ["The restricted edge-connectivity lambda \" ( G ) is the minimum cardinality over all restricted edge-cuts ."]}
+{"_id_": 43579, "sents": ["A graph is said to lambda \"-optimal if lambda \" ( G ) = xi ( G ) , where xi ( G ) denotes the minimum edge-degree of G defined as xi ( G ) = min { d ( u ) + d ( nu )-2 : u nu is an element of E ( G ) } ."]}
+{"_id_": 43580, "sents": ["The P-diameter of G measures how far apart a pair of subgraphs satisfying a given property P can be , and hence it generalizes the standard concept of diameter ."]}
+{"_id_": 43581, "sents": ["In this paper we prove two kind of results , according to which property P is chosen ."]}
+{"_id_": 43582, "sents": ["First , let D-1 ( resp ."]}
+{"_id_": 43583, "sents": ["D-2 ) be the P-diameter where P is the property that the corresponding subgraphs have minimum degree at least one ( resp ."]}
+{"_id_": 43584, "sents": ["two ) ."]}
+{"_id_": 43585, "sents": ["We prove that a graph with odd girth g is lambda \"-optimal if D-1 = 2 , being the minimum degree of G ."]}
+{"_id_": 43586, "sents": ["Using the property Q of being vertices of G-F we prove that a graph with girth g is not an element of { 4 , 6 , 8 } is lambda \"-optimal if this Q-diameter is at most 2 [ ( g-3 ) / 2 ] ."]}

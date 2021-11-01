@@ -1,0 +1,2663 @@
+{
+  "43387": [
+    [
+      0,
+      34,
+      "Probabilistic equivalence checking"
+    ],
+    [
+      38,
+      63,
+      "multiple-valued functions"
+    ]
+  ],
+  "43388": [
+    [
+      23,
+      43,
+      "probabilistic method"
+    ],
+    [
+      81,
+      106,
+      "multiple-valued functions"
+    ]
+  ],
+  "43389": [
+    [
+      30,
+      42,
+      "integer code"
+    ],
+    [
+      67,
+      92,
+      "integer-valued polynomial"
+    ],
+    [
+      186,
+      198,
+      "finite field"
+    ]
+  ],
+  "43390": [
+    [
+      61,
+      71,
+      "hash codes"
+    ]
+  ],
+  "43391": [
+    [
+      17,
+      27,
+      "hash codes"
+    ]
+  ],
+  "43392": [
+    [
+      164,
+      186,
+      "inequivalent functions"
+    ]
+  ],
+  "43393": [
+    [
+      112,
+      154,
+      "deterministic equivalence checking methods"
+    ]
+  ],
+  "43394": [
+    [
+      38,
+      76,
+      "multimedia scholarly reading practices"
+    ]
+  ],
+  "43395": [
+    [
+      17,
+      47,
+      "multimedia document production"
+    ],
+    [
+      52,
+      74,
+      "diffusion technologies"
+    ]
+  ],
+  "43396": [
+    [
+      10,
+      33,
+      "scholarly reading tasks"
+    ],
+    [
+      69,
+      85,
+      "textual contents"
+    ]
+  ],
+  "43397": [
+    [
+      52,
+      68,
+      "structured tools"
+    ],
+    [
+      108,
+      131,
+      "interpretive operations"
+    ],
+    [
+      148,
+      186,
+      "polymorphous scholarly reading process"
+    ],
+    [
+      228,
+      259,
+      "heterogeneous multimedia corpus"
+    ]
+  ],
+  "43398": [
+    [
+      78,
+      95,
+      "reading practices"
+    ]
+  ],
+  "43399": [
+    [
+      41,
+      61,
+      "software environment"
+    ],
+    [
+      226,
+      242,
+      "critical comment"
+    ]
+  ],
+  "43400": [
+    [
+      39,
+      58,
+      "humanities scholars"
+    ],
+    [
+      77,
+      103,
+      "academic reading practices"
+    ],
+    [
+      128,
+      159,
+      "document engineering principles"
+    ],
+    [
+      168,
+      199,
+      "multimedia document structuring"
+    ]
+  ],
+  "43401": [
+    [
+      0,
+      16,
+      "sensor selection"
+    ],
+    [
+      38,
+      67,
+      "ambulatory medical monitoring"
+    ]
+  ],
+  "43402": [],
+  "43403": [],
+  "43404": [
+    [
+      45,
+      60,
+      "seizure monitor"
+    ]
+  ],
+  "43405": [
+    [
+      56,
+      70,
+      "long-term wear"
+    ]
+  ],
+  "43406": [
+    [
+      38,
+      72,
+      "seizure onset detection algorithms"
+    ],
+    [
+      84,
+      100,
+      "scalp electrodes"
+    ]
+  ],
+  "43407": [
+    [
+      41,
+      53,
+      "data streams"
+    ]
+  ],
+  "43408": [
+    [
+      152,
+      174,
+      "battery-powered device"
+    ]
+  ],
+  "43409": [],
+  "43410": [
+    [
+      100,
+      116,
+      "machine learning"
+    ],
+    [
+      144,
+      169,
+      "reduced channel detectors"
+    ]
+  ],
+  "43411": [],
+  "43412": [
+    [
+      94,
+      107,
+      "mean fraction"
+    ],
+    [
+      111,
+      125,
+      "seizure onsets"
+    ]
+  ],
+  "43413": [
+    [
+      64,
+      78,
+      "detection rate"
+    ]
+  ],
+  "43414": [
+    [
+      10,
+      35,
+      "average detection latency"
+    ],
+    [
+      89,
+      101,
+      "false alarms"
+    ]
+  ],
+  "43415": [
+    [
+      19,
+      43,
+      "prototype implementation"
+    ],
+    [
+      49,
+      85,
+      "single channel EEG monitoring device"
+    ],
+    [
+      98,
+      122,
+      "off-the-shelf components"
+    ],
+    [
+      166,
+      190,
+      "energy consumption model"
+    ]
+  ],
+  "43416": [
+    [
+      41,
+      59,
+      "energy consumption"
+    ],
+    [
+      106,
+      122,
+      "battery lifetime"
+    ]
+  ],
+  "43417": [
+    [
+      33,
+      47,
+      "energy savings"
+    ],
+    [
+      85,
+      103,
+      "screening detector"
+    ],
+    [
+      107,
+      115,
+      "rule out"
+    ]
+  ],
+  "43418": [
+    [
+      91,
+      109,
+      "energy consumption"
+    ]
+  ],
+  "43419": [
+    [
+      0,
+      23,
+      "process synchronization"
+    ],
+    [
+      32,
+      51,
+      "long-term interlock"
+    ]
+  ],
+  "43420": [
+    [
+      39,
+      61,
+      "long-term interlocking"
+    ],
+    [
+      107,
+      124,
+      "unprivileged code"
+    ],
+    [
+      135,
+      149,
+      "version number"
+    ]
+  ],
+  "43421": [
+    [
+      19,
+      48,
+      "operating system architecture"
+    ],
+    [
+      87,
+      108,
+      "intrinsic reliability"
+    ],
+    [
+      209,
+      226,
+      "long-term lockout"
+    ]
+  ],
+  "43422": [
+    [
+      49,
+      69,
+      "fuzzy neural network"
+    ],
+    [
+      75,
+      104,
+      "RFID-based positioning system"
+    ]
+  ],
+  "43423": [
+    [
+      60,
+      83,
+      "supply chain management"
+    ],
+    [
+      131,
+      161,
+      "radio frequency identification"
+    ],
+    [
+      176,
+      196,
+      "warehouse management"
+    ]
+  ],
+  "43424": [],
+  "43425": [
+    [
+      36,
+      47,
+      "RFID system"
+    ],
+    [
+      64,
+      78,
+      "business costs"
+    ],
+    [
+      123,
+      136,
+      "picking carts"
+    ]
+  ],
+  "43426": [
+    [
+      23,
+      47,
+      "artificial immune system"
+    ],
+    [
+      62,
+      82,
+      "fuzzy neural network"
+    ],
+    [
+      131,
+      143,
+      "RFID signals"
+    ]
+  ],
+  "43427": [],
+  "43428": [
+    [
+      37,
+      50,
+      "local optimum"
+    ],
+    [
+      67,
+      86,
+      "learning capability"
+    ]
+  ],
+  "43429": [
+    [
+      103,
+      115,
+      "picking cart"
+    ],
+    [
+      178,
+      203,
+      "artificial neural network"
+    ],
+    [
+      290,
+      309,
+      "fuzzy IF-THEN rules"
+    ]
+  ],
+  "43430": [
+    [
+      0,
+      53,
+      "Single-dimension multidimensional software pipelining"
+    ]
+  ],
+  "43431": [
+    [
+      16,
+      35,
+      "software pipelining"
+    ],
+    [
+      61,
+      75,
+      "innermost loop"
+    ],
+    [
+      87,
+      96,
+      "loop nest"
+    ],
+    [
+      109,
+      123,
+      "innermost loop"
+    ],
+    [
+      127,
+      138,
+      "outer loops"
+    ]
+  ],
+  "43432": [
+    [
+      51,
+      87,
+      "single-dimension software pipelining"
+    ],
+    [
+      101,
+      118,
+      "software pipeline"
+    ],
+    [
+      121,
+      130,
+      "loop nest"
+    ],
+    [
+      147,
+      157,
+      "loop level"
+    ],
+    [
+      169,
+      196,
+      "rectangular iteration space"
+    ],
+    [
+      213,
+      232,
+      "sibling inner loops"
+    ]
+  ],
+  "43433": [
+    [
+      46,
+      56,
+      "loop level"
+    ],
+    [
+      61,
+      80,
+      "software pipelining"
+    ],
+    [
+      93,
+      108,
+      "initiation rate"
+    ],
+    [
+      111,
+      131,
+      "data reuse potential"
+    ],
+    [
+      147,
+      168,
+      "optimization criteria"
+    ]
+  ],
+  "43434": [
+    [
+      48,
+      69,
+      "data-dependence graph"
+    ],
+    [
+      94,
+      104,
+      "loop level"
+    ],
+    [
+      112,
+      131,
+      "one-dimensional DDG"
+    ],
+    [
+      149,
+      180,
+      "one-dimensional ( 1D ) schedule"
+    ]
+  ],
+  "43435": [
+    [
+      13,
+      37,
+      "one-dimensional schedule"
+    ],
+    [
+      72,
+      88,
+      "mapping function"
+    ],
+    [
+      108,
+      121,
+      "schedule time"
+    ],
+    [
+      130,
+      149,
+      "operation instances"
+    ],
+    [
+      157,
+      178,
+      "multidimensional loop"
+    ]
+  ],
+  "43436": [
+    [
+      14,
+      31,
+      "modulo scheduling"
+    ],
+    [
+      56,
+      68,
+      "special case"
+    ]
+  ],
+  "43437": [
+    [
+      31,
+      52,
+      "hyperplane scheduling"
+    ]
+  ],
+  "43438": [
+    [
+      14,
+      27,
+      "SSP schedules"
+    ],
+    [
+      110,
+      135,
+      "modulo scheduling methods"
+    ]
+  ],
+  "43439": [
+    [
+      36,
+      46,
+      "loop nests"
+    ],
+    [
+      78,
+      95,
+      "instruction level"
+    ]
+  ],
+  "43440": [
+    [
+      9,
+      29,
+      "initiation intervals"
+    ],
+    [
+      63,
+      83,
+      "execution efficiency"
+    ]
+  ],
+  "43441": [
+    [
+      62,
+      86,
+      "prototype implementation"
+    ],
+    [
+      94,
+      106,
+      "ORC compiler"
+    ],
+    [
+      115,
+      133,
+      "IA-64 architecture"
+    ],
+    [
+      148,
+      158,
+      "loop nests"
+    ],
+    [
+      187,
+      212,
+      "floating-point benchmarks"
+    ]
+  ],
+  "43442": [
+    [
+      59,
+      76,
+      "modulo scheduling"
+    ],
+    [
+      79,
+      98,
+      "software pipelining"
+    ],
+    [
+      117,
+      127,
+      "loop level"
+    ]
+  ],
+  "43443": [
+    [
+      0,
+      19,
+      "Software pipelining"
+    ],
+    [
+      50,
+      70,
+      "loop transformations"
+    ]
+  ],
+  "43444": [
+    [
+      2,
+      24,
+      "geometric-based method"
+    ],
+    [
+      74,
+      100,
+      "semi-transparent particles"
+    ],
+    [
+      104,
+      120,
+      "gray tone images"
+    ]
+  ],
+  "43445": [
+    [
+      2,
+      24,
+      "geometric-based method"
+    ],
+    [
+      54,
+      75,
+      "overlapping particles"
+    ],
+    [
+      89,
+      105,
+      "polygonal shapes"
+    ],
+    [
+      155,
+      174,
+      "prismatic particles"
+    ],
+    [
+      180,
+      195,
+      "gray tone image"
+    ]
+  ],
+  "43446": [
+    [
+      42,
+      57,
+      "salient corners"
+    ],
+    [
+      116,
+      137,
+      "overlapping particles"
+    ]
+  ],
+  "43447": [
+    [
+      49,
+      81,
+      "perspective geometric projection"
+    ]
+  ],
+  "43448": [
+    [
+      13,
+      33,
+      "clustering technique"
+    ],
+    [
+      95,
+      110,
+      "salient corners"
+    ],
+    [
+      128,
+      148,
+      "geometric properties"
+    ]
+  ],
+  "43449": [
+    [
+      2,
+      20,
+      "simulation process"
+    ]
+  ],
+  "43450": [
+    [
+      39,
+      55,
+      "real application"
+    ],
+    [
+      59,
+      88,
+      "batch cooling crystallization"
+    ],
+    [
+      96,
+      112,
+      "ammonium oxalate"
+    ],
+    [
+      116,
+      126,
+      "pure water"
+    ]
+  ],
+  "43451": [
+    [
+      76,
+      97,
+      "overlapping particles"
+    ]
+  ],
+  "43452": [
+    [
+      0,
+      28,
+      "EXPLICIT DIMENSION REDUCTION"
+    ]
+  ],
+  "43453": [
+    [
+      37,
+      67,
+      "linear transformations"
+    ],
+    [
+      147,
+      155,
+      "L-2 norm"
+    ]
+  ],
+  "43454": [
+    [
+      56,
+      75,
+      "success probability"
+    ],
+    [
+      104,
+      127,
+      "probabilistic arguments"
+    ]
+  ],
+  "43455": [
+    [
+      62,
+      84,
+      "pseudorandom generator"
+    ],
+    [
+      91,
+      117,
+      "linear threshold functions"
+    ]
+  ],
+  "43456": [
+    [
+      50,
+      66,
+      "spherical digons"
+    ]
+  ],
+  "43457": [
+    [
+      40,
+      65,
+      "oblivious derandomization"
+    ],
+    [
+      73,
+      109,
+      "Goemans-Williamson Max-Cut algorithm"
+    ],
+    [
+      122,
+      146,
+      "approximation algorithms"
+    ]
+  ],
+  "43458": [],
+  "43459": [
+    [
+      53,
+      79,
+      "linear threshold functions"
+    ],
+    [
+      158,
+      190,
+      "k-wise independent sample spaces"
+    ]
+  ],
+  "43460": [
+    [
+      0,
+      21,
+      "Capital One Financial"
+    ]
+  ],
+  "43461": [
+    [
+      0,
+      12,
+      "Market share"
+    ],
+    [
+      17,
+      34,
+      "brand recognition"
+    ]
+  ],
+  "43462": [
+    [
+      15,
+      26,
+      "Capital One"
+    ],
+    [
+      55,
+      66,
+      "credit card"
+    ]
+  ],
+  "43463": [
+    [
+      50,
+      74,
+      "newly vulnerable markets"
+    ]
+  ],
+  "43464": [
+    [
+      15,
+      26,
+      "Capital One"
+    ],
+    [
+      77,
+      105,
+      "information-based strategies"
+    ],
+    [
+      117,
+      141,
+      "newly vulnerable markets"
+    ]
+  ],
+  "43465": [],
+  "43466": [
+    [
+      0,
+      14,
+      "scene analysis"
+    ],
+    [
+      19,
+      37,
+      "geometric homology"
+    ]
+  ],
+  "43467": [
+    [
+      77,
+      103,
+      "applied geometric problems"
+    ]
+  ],
+  "43468": [
+    [
+      53,
+      76,
+      "infinitesimal mechanics"
+    ]
+  ],
+  "43469": [],
+  "43470": [
+    [
+      59,
+      76,
+      "graphical statics"
+    ]
+  ],
+  "43471": [
+    [
+      19,
+      38,
+      "computer scientists"
+    ],
+    [
+      80,
+      97,
+      "graphical statics"
+    ],
+    [
+      105,
+      132,
+      "applied projective geometry"
+    ],
+    [
+      164,
+      178,
+      "scene analysis"
+    ]
+  ],
+  "43472": [
+    [
+      75,
+      109,
+      "Structural Topology research group"
+    ],
+    [
+      117,
+      139,
+      "University of Montreal"
+    ]
+  ],
+  "43473": [
+    [
+      62,
+      81,
+      "Structural Topology"
+    ],
+    [
+      133,
+      156,
+      "infinitesimal mechanics"
+    ],
+    [
+      186,
+      203,
+      "graphical statics"
+    ],
+    [
+      222,
+      238,
+      "exterior algebra"
+    ],
+    [
+      270,
+      304,
+      "Doubilet-Rota-Stein double algebra"
+    ]
+  ],
+  "43474": [
+    [
+      69,
+      97,
+      "Maxwell's reciprocal figures"
+    ],
+    [
+      137,
+      148,
+      "plane image"
+    ],
+    [
+      172,
+      191,
+      "3D polyhedral scene"
+    ]
+  ],
+  "43475": [
+    [
+      87,
+      100,
+      "pilot project"
+    ],
+    [
+      105,
+      135,
+      "automated descriptive geometry"
+    ]
+  ],
+  "43476": [
+    [
+      13,
+      29,
+      "software package"
+    ],
+    [
+      59,
+      71,
+      "plane sketch"
+    ],
+    [
+      114,
+      122,
+      "3D scene"
+    ]
+  ],
+  "43477": [
+    [
+      4,
+      18,
+      "starting point"
+    ],
+    [
+      103,
+      129,
+      "applied geometric problems"
+    ]
+  ],
+  "43478": [
+    [
+      53,
+      76,
+      "infinitesimal mechanics"
+    ]
+  ],
+  "43479": [],
+  "43480": [
+    [
+      59,
+      76,
+      "graphical statics"
+    ]
+  ],
+  "43481": [
+    [
+      19,
+      38,
+      "computer scientists"
+    ],
+    [
+      80,
+      97,
+      "graphical statics"
+    ],
+    [
+      105,
+      132,
+      "applied projective geometry"
+    ],
+    [
+      164,
+      178,
+      "scene analysis"
+    ]
+  ],
+  "43482": [
+    [
+      75,
+      94,
+      "Structural Topology"
+    ],
+    [
+      117,
+      139,
+      "University of Montreal"
+    ]
+  ],
+  "43483": [
+    [
+      62,
+      81,
+      "Structural Topology"
+    ],
+    [
+      133,
+      156,
+      "infinitesimal mechanics"
+    ],
+    [
+      186,
+      203,
+      "graphical statics"
+    ]
+  ],
+  "43484": [
+    [
+      69,
+      97,
+      "Maxwell's reciprocal figures"
+    ],
+    [
+      137,
+      148,
+      "plane image"
+    ],
+    [
+      172,
+      191,
+      "3D polyhedral scene"
+    ]
+  ],
+  "43485": [
+    [
+      87,
+      100,
+      "pilot project"
+    ],
+    [
+      105,
+      135,
+      "automated descriptive geometry"
+    ]
+  ],
+  "43486": [
+    [
+      13,
+      29,
+      "software package"
+    ],
+    [
+      59,
+      71,
+      "plane sketch"
+    ],
+    [
+      93,
+      108,
+      "true projection"
+    ],
+    [
+      114,
+      122,
+      "3D scene"
+    ]
+  ],
+  "43487": [
+    [
+      4,
+      18,
+      "starting point"
+    ],
+    [
+      26,
+      55,
+      "projective geometric analysis"
+    ],
+    [
+      105,
+      135,
+      "three-dimensional realizations"
+    ],
+    [
+      162,
+      188,
+      "two-dimensional projection"
+    ],
+    [
+      221,
+      233,
+      "linear space"
+    ]
+  ],
+  "43488": [
+    [
+      57,
+      80,
+      "spatial interpretations"
+    ],
+    [
+      156,
+      172,
+      "linear dimension"
+    ],
+    [
+      192,
+      204,
+      "linear space"
+    ]
+  ],
+  "43489": [
+    [
+      42,
+      58,
+      "cathode-ray tube"
+    ],
+    [
+      64,
+      81,
+      "aerial photograph"
+    ],
+    [
+      129,
+      146,
+      "NMR scan"
+    ]
+  ],
+  "43490": [
+    [
+      112,
+      134,
+      "spatial interpretation"
+    ],
+    [
+      236,
+      255,
+      "engineering drawing"
+    ],
+    [
+      359,
+      371,
+      "3D structure"
+    ]
+  ],
+  "43491": [
+    [
+      121,
+      145,
+      "combinatorial algorithms"
+    ]
+  ],
+  "43492": [],
+  "43493": [],
+  "43494": [
+    [
+      93,
+      101,
+      "3D scene"
+    ],
+    [
+      192,
+      227,
+      "not-always-elementary constructions"
+    ]
+  ],
+  "43495": [
+    [
+      60,
+      81,
+      "projective conditions"
+    ],
+    [
+      100,
+      115,
+      "homology theory"
+    ],
+    [
+      120,
+      144,
+      "geometric configurations"
+    ]
+  ],
+  "43496": [
+    [
+      8,
+      23,
+      "homology theory"
+    ],
+    [
+      35,
+      52,
+      "geometric objects"
+    ],
+    [
+      100,
+      113,
+      "rubber sheets"
+    ],
+    [
+      141,
+      154,
+      "Henri Poincar"
+    ]
+  ],
+  "43497": [
+    [
+      86,
+      101,
+      "homology theory"
+    ],
+    [
+      218,
+      235,
+      "cohomology theory"
+    ]
+  ],
+  "43498": [
+    [
+      53,
+      70,
+      "cohomology theory"
+    ],
+    [
+      88,
+      112,
+      "locally linear functions"
+    ],
+    [
+      154,
+      171,
+      "topological space"
+    ]
+  ],
+  "43499": [
+    [
+      4,
+      17,
+      "basic objects"
+    ],
+    [
+      39,
+      54,
+      "homology theory"
+    ]
+  ],
+  "43500": [
+    [
+      51,
+      62,
+      "finite sets"
+    ],
+    [
+      78,
+      94,
+      "projective space"
+    ],
+    [
+      98,
+      109,
+      "finite sets"
+    ],
+    [
+      126,
+      138,
+      "vector space"
+    ]
+  ],
+  "43501": [
+    [
+      49,
+      63,
+      "linear algebra"
+    ],
+    [
+      121,
+      134,
+      "vector spaces"
+    ],
+    [
+      142,
+      156,
+      "selected basis"
+    ],
+    [
+      169,
+      191,
+      "concrete vector spaces"
+    ]
+  ],
+  "43502": [
+    [
+      46,
+      66,
+      "rectangular matrices"
+    ]
+  ],
+  "43503": [
+    [
+      40,
+      59,
+      "applied mathematics"
+    ],
+    [
+      76,
+      91,
+      "homology theory"
+    ]
+  ],
+  "43504": [
+    [
+      44,
+      59,
+      "homology theory"
+    ],
+    [
+      109,
+      124,
+      "global behavior"
+    ],
+    [
+      158,
+      176,
+      "linear constraints"
+    ]
+  ],
+  "43505": [
+    [
+      21,
+      49,
+      "Contextual Image Advertising"
+    ]
+  ],
+  "43506": [
+    [
+      4,
+      20,
+      "daunting volumes"
+    ],
+    [
+      24,
+      60,
+      "community-contributed media contents"
+    ],
+    [
+      100,
+      115,
+      "primary sources"
+    ],
+    [
+      120,
+      138,
+      "online advertising"
+    ]
+  ],
+  "43507": [
+    [
+      52,
+      69,
+      "video advertising"
+    ],
+    [
+      81,
+      97,
+      "text advertising"
+    ],
+    [
+      112,
+      124,
+      "relevant ads"
+    ],
+    [
+      154,
+      162,
+      "Web page"
+    ],
+    [
+      189,
+      213,
+      "inherent characteristics"
+    ],
+    [
+      217,
+      232,
+      "visual contents"
+    ]
+  ],
+  "43508": [
+    [
+      24,
+      53,
+      "contextual advertising system"
+    ],
+    [
+      104,
+      116,
+      "relevant ads"
+    ],
+    [
+      164,
+      172,
+      "Web page"
+    ],
+    [
+      211,
+      229,
+      "nonintrusive areas"
+    ],
+    [
+      242,
+      258,
+      "individual image"
+    ]
+  ],
+  "43509": [
+    [
+      51,
+      71,
+      "scalable advertising"
+    ],
+    [
+      97,
+      106,
+      "Web sites"
+    ]
+  ],
+  "43510": [
+    [
+      55,
+      72,
+      "textual relevance"
+    ],
+    [
+      82,
+      99,
+      "visual similarity"
+    ],
+    [
+      124,
+      144,
+      "contextual relevance"
+    ],
+    [
+      169,
+      177,
+      "Web page"
+    ],
+    [
+      186,
+      199,
+      "image content"
+    ]
+  ],
+  "43511": [
+    [
+      4,
+      26,
+      "ad insertion positions"
+    ],
+    [
+      49,
+      63,
+      "image salience"
+    ],
+    [
+      77,
+      100,
+      "face and text detection"
+    ]
+  ],
+  "43512": [
+    [
+      28,
+      57,
+      "large-scale real-world images"
+    ],
+    [
+      62,
+      71,
+      "Web pages"
+    ],
+    [
+      126,
+      150,
+      "online image advertising"
+    ]
+  ],
+  "43513": [
+    [
+      17,
+      33,
+      "Blind Estimation"
+    ],
+    [
+      37,
+      52,
+      "Phase Sequences"
+    ],
+    [
+      57,
+      81,
+      "Subcarrier-Phase Control"
+    ],
+    [
+      88,
+      102,
+      "PAPR Reduction"
+    ],
+    [
+      106,
+      129,
+      "LDPC Coded OFDM Systems"
+    ]
+  ],
+  "43514": [
+    [
+      44,
+      68,
+      "blind estimation methods"
+    ],
+    [
+      72,
+      87,
+      "phase sequences"
+    ],
+    [
+      105,
+      129,
+      "subcarrier phase control"
+    ],
+    [
+      136,
+      163,
+      "peak to average power ratio"
+    ],
+    [
+      186,
+      210,
+      "low density parity check"
+    ],
+    [
+      226,
+      268,
+      "orthogonal frequency division multiplexing"
+    ]
+  ],
+  "43515": [
+    [
+      24,
+      47,
+      "phase sequence patterns"
+    ],
+    [
+      81,
+      100,
+      "parity check matrix"
+    ]
+  ],
+  "43516": [
+    [
+      16,
+      27,
+      "OFDM signal"
+    ],
+    [
+      70,
+      84,
+      "phase sequence"
+    ],
+    [
+      146,
+      162,
+      "weighting factor"
+    ],
+    [
+      188,
+      213,
+      "partial transmit sequence"
+    ]
+  ],
+  "43517": [
+    [
+      25,
+      39,
+      "phase sequence"
+    ],
+    [
+      71,
+      88,
+      "decoding function"
+    ],
+    [
+      109,
+      123,
+      "phase sequence"
+    ],
+    [
+      150,
+      184,
+      "possible phase sequence candidates"
+    ],
+    [
+      214,
+      245,
+      "sum product calculation results"
+    ]
+  ],
+  "43518": [
+    [
+      0,
+      19,
+      "Computer simulation"
+    ],
+    [
+      168,
+      184,
+      "block error rate"
+    ],
+    [
+      265,
+      290,
+      "Rayleigh fading condition"
+    ]
+  ],
+  "43519": [
+    [
+      10,
+      27,
+      "Tight integration"
+    ],
+    [
+      39,
+      71,
+      "mathematical decision procedures"
+    ]
+  ],
+  "43520": [
+    [
+      23,
+      62,
+      "propositional satisfiability techniques"
+    ],
+    [
+      167,
+      182,
+      "circuit testing"
+    ],
+    [
+      185,
+      207,
+      "propositional planning"
+    ]
+  ],
+  "43521": [
+    [
+      19,
+      41,
+      "Boolean representation"
+    ],
+    [
+      138,
+      162,
+      "timed and hybrid systems"
+    ],
+    [
+      168,
+      185,
+      "proof obligations"
+    ],
+    [
+      207,
+      221,
+      "circuit design"
+    ],
+    [
+      225,
+      234,
+      "RTL level"
+    ]
+  ],
+  "43522": [
+    [
+      61,
+      84,
+      "linear arithmetic logic"
+    ],
+    [
+      109,
+      128,
+      "Boolean combination"
+    ],
+    [
+      132,
+      155,
+      "propositional variables"
+    ],
+    [
+      160,
+      178,
+      "linear constraints"
+    ],
+    [
+      184,
+      203,
+      "numerical variables"
+    ]
+  ],
+  "43523": [
+    [
+      43,
+      71,
+      "SAT-based decision procedure"
+    ],
+    [
+      148,
+      158,
+      "SAT solver"
+    ],
+    [
+      176,
+      195,
+      "mathematical solver"
+    ]
+  ],
+  "43524": [],
+  "43525": [
+    [
+      100,
+      114,
+      "Boolean search"
+    ],
+    [
+      123,
+      142,
+      "mathematical solver"
+    ]
+  ],
+  "43526": [
+    [
+      29,
+      67,
+      "theory-driven backjumping and learning"
+    ],
+    [
+      74,
+      97,
+      "theory-driven deduction"
+    ],
+    [
+      107,
+      122,
+      "static learning"
+    ],
+    [
+      156,
+      170,
+      "Boolean models"
+    ],
+    [
+      221,
+      239,
+      "problem clustering"
+    ],
+    [
+      262,
+      284,
+      "mathematical reasoning"
+    ],
+    [
+      303,
+      324,
+      "stack-based interface"
+    ],
+    [
+      353,
+      375,
+      "mathematical reasoning"
+    ]
+  ],
+  "43527": [
+    [
+      13,
+      32,
+      "mathematical solver"
+    ],
+    [
+      157,
+      193,
+      "equality and uninterpreted functions"
+    ],
+    [
+      196,
+      228,
+      "linear arithmetic"
+    ],
+    [
+      231,
+      266,
+      "linear arithmetic"
+    ]
+  ],
+  "43528": [
+    [
+      29,
+      53,
+      "dedicated ( sub ) solver"
+    ]
+  ],
+  "43529": [
+    [
+      84,
+      114,
+      "subsequent solvers superfluous"
+    ]
+  ],
+  "43530": [],
+  "43531": [
+    [
+      116,
+      140,
+      "reference option setting"
+    ]
+  ],
+  "43532": [
+    [
+      24,
+      44,
+      "global effectiveness"
+    ],
+    [
+      107,
+      126,
+      "decision procedures"
+    ]
+  ],
+  "43533": [
+    [
+      111,
+      127,
+      "difference logic"
+    ]
+  ],
+  "43534": [
+    [
+      0,
+      23,
+      "Strongly regular graphs"
+    ],
+    [
+      33,
+      55,
+      "( 7 )-vertex condition"
+    ]
+  ],
+  "43535": [
+    [
+      4,
+      26,
+      "( t )-vertex condition"
+    ],
+    [
+      149,
+      172,
+      "combinatorial invariant"
+    ]
+  ],
+  "43536": [
+    [
+      0,
+      20,
+      "Finite rank 3 graphs"
+    ]
+  ],
+  "43537": [
+    [
+      13,
+      37,
+      "long-standing conjecture"
+    ],
+    [
+      122,
+      146,
+      "( t_0 )-vertex condition"
+    ],
+    [
+      170,
+      182,
+      "rank 3 graph"
+    ]
+  ],
+  "43538": [
+    [
+      40,
+      74,
+      "non-rank 3 strongly regular graphs"
+    ],
+    [
+      90,
+      112,
+      "( 7 )-vertex condition"
+    ]
+  ],
+  "43539": [
+    [
+      22,
+      44,
+      "Klin parameter ( t_0 )"
+    ]
+  ],
+  "43540": [
+    [
+      21,
+      33,
+      "point graphs"
+    ]
+  ],
+  "43541": [
+    [
+      0,
+      26,
+      "( ( epsilon )-) Efficiency"
+    ],
+    [
+      30,
+      60,
+      "difference vector optimization"
+    ]
+  ],
+  "43542": [
+    [
+      51,
+      64,
+      "Pareto optima"
+    ],
+    [
+      143,
+      190,
+      "finite or infinite-dimensional preordered space"
+    ]
+  ],
+  "43543": [
+    [
+      34,
+      54,
+      "optimality criterion"
+    ],
+    [
+      58,
+      80,
+      "scalar DC optimization"
+    ],
+    [
+      85,
+      110,
+      "mixed vectorial condition"
+    ],
+    [
+      263,
+      278,
+      "weak efficiency"
+    ]
+  ],
+  "43544": [
+    [
+      53,
+      72,
+      "restricted mappings"
+    ]
+  ],
+  "43545": [
+    [
+      67,
+      102,
+      "strong ( epsilon )-subdifferentials"
+    ],
+    [
+      126,
+      154,
+      "strongly efficient solutions"
+    ],
+    [
+      157,
+      169,
+      "usual optima"
+    ],
+    [
+      230,
+      245,
+      "objective space"
+    ]
+  ],
+  "43546": [
+    [
+      0,
+      27,
+      "iterative visual clustering"
+    ],
+    [
+      32,
+      56,
+      "unstructured text mining"
+    ]
+  ],
+  "43547": [
+    [
+      24,
+      51,
+      "iterative visual clustering"
+    ],
+    [
+      63,
+      90,
+      "unstructured text sequences"
+    ],
+    [
+      112,
+      128,
+      "keyword clusters"
+    ],
+    [
+      160,
+      175,
+      "visual analysis"
+    ],
+    [
+      178,
+      194,
+      "domain knowledge"
+    ]
+  ],
+  "43548": [
+    [
+      4,
+      22,
+      "text sequence data"
+    ],
+    [
+      81,
+      99,
+      "textual evaluation"
+    ],
+    [
+      144,
+      160,
+      "keyword clusters"
+    ],
+    [
+      168,
+      196,
+      "iterative stochastic process"
+    ]
+  ],
+  "43549": [
+    [
+      4,
+      27,
+      "visual evaluation model"
+    ],
+    [
+      37,
+      54,
+      "shape evaluations"
+    ],
+    [
+      58,
+      76,
+      "quantitative tools"
+    ],
+    [
+      105,
+      122,
+      "qualitative tools"
+    ],
+    [
+      188,
+      204,
+      "keyword clusters"
+    ]
+  ],
+  "43550": [
+    [
+      4,
+      28,
+      "keyword clustering model"
+    ],
+    [
+      57,
+      75,
+      "visual evaluations"
+    ],
+    [
+      122,
+      138,
+      "keyword clusters"
+    ],
+    [
+      187,
+      199,
+      "search space"
+    ]
+  ],
+  "43551": [
+    [
+      38,
+      56,
+      "nursing narratives"
+    ],
+    [
+      93,
+      109,
+      "keyword clusters"
+    ],
+    [
+      119,
+      135,
+      "hidden knowledge"
+    ],
+    [
+      153,
+      169,
+      "working patterns"
+    ]
+  ],
+  "43552": [
+    [
+      41,
+      57,
+      "keyword clusters"
+    ],
+    [
+      114,
+      130,
+      "domain knowledge"
+    ],
+    [
+      177,
+      200,
+      "stochastic search model"
+    ]
+  ],
+  "43553": [
+    [
+      92,
+      108,
+      "text mining tool"
+    ],
+    [
+      145,
+      167,
+      "biomedical literatures"
+    ]
+  ],
+  "43554": [
+    [
+      0,
+      15,
+      "Economic growth"
+    ],
+    [
+      18,
+      48,
+      "telecommunications development"
+    ],
+    [
+      53,
+      72,
+      "productivity growth"
+    ],
+    [
+      80,
+      105,
+      "telecommunications sector"
+    ]
+  ],
+  "43555": [
+    [
+      45,
+      60,
+      "economic growth"
+    ],
+    [
+      63,
+      93,
+      "telecommunications development"
+    ],
+    [
+      98,
+      117,
+      "productivity growth"
+    ],
+    [
+      125,
+      150,
+      "telecommunications sector"
+    ]
+  ],
+  "43556": [
+    [
+      50,
+      75,
+      "mobile telecommunications"
+    ],
+    [
+      79,
+      94,
+      "economic growth"
+    ],
+    [
+      99,
+      130,
+      "telecommunications productivity"
+    ]
+  ],
+  "43557": [
+    [
+      37,
+      63,
+      "bidirectional relationship"
+    ],
+    [
+      77,
+      99,
+      "gross domestic product"
+    ],
+    [
+      112,
+      142,
+      "telecommunications development"
+    ],
+    [
+      191,
+      212,
+      "high-income countries"
+    ]
+  ],
+  "43558": [
+    [
+      29,
+      66,
+      "mobile telecommunications development"
+    ],
+    [
+      70,
+      85,
+      "economic growth"
+    ],
+    [
+      115,
+      142,
+      "bi-directional relationship"
+    ],
+    [
+      183,
+      204,
+      "high-income countries"
+    ]
+  ],
+  "43559": [
+    [
+      44,
+      69,
+      "upper-middle income group"
+    ],
+    [
+      101,
+      126,
+      "total factor productivity"
+    ]
+  ],
+  "43560": [
+    [
+      90,
+      100,
+      "TFP growth"
+    ]
+  ],
+  "43561": [
+    [
+      17,
+      51,
+      "mobile telecommunications services"
+    ],
+    [
+      110,
+      120,
+      "TFP growth"
+    ],
+    [
+      128,
+      153,
+      "telecommunications sector"
+    ],
+    [
+      157,
+      183,
+      "Central and Eastern Europe"
+    ]
+  ],
+  "43562": [
+    [
+      78,
+      95,
+      "multimedia effect"
+    ]
+  ],
+  "43563": [
+    [
+      4,
+      21,
+      "multimedia effect"
+    ]
+  ],
+  "43564": [],
+  "43565": [
+    [
+      4,
+      25,
+      "outcome-oriented view"
+    ],
+    [
+      83,
+      105,
+      "mental representations"
+    ],
+    [
+      120,
+      141,
+      "process-oriented view"
+    ],
+    [
+      200,
+      222,
+      "information processing"
+    ]
+  ],
+  "43566": [
+    [
+      30,
+      38,
+      "ME sizes"
+    ]
+  ],
+  "43567": [],
+  "43568": [
+    [
+      12,
+      33,
+      "outcome-oriented view"
+    ],
+    [
+      61,
+      68,
+      "ME size"
+    ],
+    [
+      75,
+      96,
+      "process-oriented view"
+    ],
+    [
+      132,
+      144,
+      "causal tasks"
+    ],
+    [
+      158,
+      174,
+      "procedural tasks"
+    ],
+    [
+      193,
+      209,
+      "conceptual tasks"
+    ]
+  ],
+  "43569": [],
+  "43570": [
+    [
+      14,
+      32,
+      "information source"
+    ]
+  ],
+  "43571": [],
+  "43572": [
+    [
+      43,
+      64,
+      "process-oriented view"
+    ],
+    [
+      90,
+      106,
+      "conceptual tasks"
+    ],
+    [
+      116,
+      132,
+      "procedural tasks"
+    ]
+  ],
+  "43573": [
+    [
+      52,
+      68,
+      "procedural tasks"
+    ],
+    [
+      77,
+      89,
+      "causal tasks"
+    ]
+  ],
+  "43574": [
+    [
+      46,
+      64,
+      "information source"
+    ]
+  ],
+  "43575": [],
+  "43576": [
+    [
+      0,
+      21,
+      "Sufficient conditions"
+    ],
+    [
+      26,
+      45,
+      "lambda \"-optimality"
+    ],
+    [
+      67,
+      87,
+      "conditional diameter"
+    ]
+  ],
+  "43577": [
+    [
+      29,
+      44,
+      "connected graph"
+    ],
+    [
+      83,
+      98,
+      "isolated vertex"
+    ]
+  ],
+  "43578": [
+    [
+      4,
+      39,
+      "restricted edge-connectivity lambda"
+    ],
+    [
+      55,
+      74,
+      "minimum cardinality"
+    ],
+    [
+      84,
+      104,
+      "restricted edge-cuts"
+    ]
+  ],
+  "43579": [
+    [
+      94,
+      113,
+      "minimum edge-degree"
+    ]
+  ],
+  "43580": [],
+  "43581": [],
+  "43582": [],
+  "43583": [
+    [
+      86,
+      100,
+      "minimum degree"
+    ]
+  ],
+  "43584": [],
+  "43585": [
+    [
+      82,
+      96,
+      "minimum degree"
+    ]
+  ],
+  "43586": []
+}
