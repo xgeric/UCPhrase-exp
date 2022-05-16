@@ -219,8 +219,8 @@ class BaseFeatureExtractor:
                     neg_spans_batch.append(neg_spans)
             batch_size = len(input_ids_batch)
             pointer += batch_size
-            input_ids_batch = torch.tensor(input_ids_batch, device=consts.DEVICE)
-            input_masks_batch = torch.tensor(input_masks_batch, device=consts.DEVICE)
+            input_ids_batch = torch.tensor(input_ids_batch)
+            input_masks_batch = torch.tensor(input_masks_batch)
             if is_train:
                 batches.append((input_ids_batch, input_masks_batch, pos_spans_batch, neg_spans_batch))
             else:

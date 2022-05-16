@@ -1,4 +1,6 @@
 import torch
+
+import consts
 import utils
 import random
 from tqdm import tqdm
@@ -7,6 +9,8 @@ from torch.optim import Adam
 from model_emb.model import EmbedModel
 from model_base.base import BaseFeatureExtractor
 from sklearn.metrics import confusion_matrix, f1_score
+
+from utils import move_to
 
 
 class EmbedTrainer:
@@ -50,7 +54,7 @@ class EmbedTrainer:
                     spans_batch.append(pos_spans + neg_spans)
                     labels += [1] * len(pos_spans) + [0] * len(neg_spans)
                 labels = torch.as_tensor(labels, device=DEVICE)
-                batch_loss = self.model.get_loss(labels, input_ids_batch, input_masks_batch, spans_batch)
+                batch_loss = self.model.get_loss(labels, move_to(input_ids_batch, DEVICE), move_to(input_masks_batch, DEVICE), move_to(spans_batch, DEVICE))
                 epoch_loss += batch_loss.item()
                 batch_loss.backward()
                 torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1.0)
@@ -69,7 +73,7 @@ class EmbedTrainer:
                     for pos_spans, neg_spans in zip(pos_spans_batch, neg_spans_batch):
                         spans_batch.append(pos_spans + neg_spans)
                         gold_labels += [1] * len(pos_spans) + [0] * len(neg_spans)
-                    pred_probs = self.model.get_probs(input_ids_batch, input_masks_batch, spans_batch)
+                    pred_probs = self.model.get_probs(move_to(input_ids_batch, DEVICE), move_to(input_masks_batch, DEVICE), move_to(spans_batch, DEVICE))
                     pred_probs = pred_probs.detach().cpu().numpy().tolist()
                     pred_labels += [int(p > .5) for p in pred_probs]
             valid_f1 = f1_score(gold_labels, pred_labels, average="micro")

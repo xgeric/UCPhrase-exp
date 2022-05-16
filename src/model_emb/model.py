@@ -6,6 +6,7 @@ from tqdm import tqdm
 from pathlib import Path
 from model_base.base import BaseModel
 from model_base.base import BaseFeatureExtractor
+from utils import move_to
 
 
 class EmbedModel(BaseModel):
@@ -113,7 +114,7 @@ class EmbedModel(BaseModel):
         with torch.no_grad():
             i_sent = 0
             for input_ids_batch, input_masks_batch, possible_spans_batch in tqdm(batches, ncols=100, desc='Pred'):
-                pred_probs = self.get_probs(input_ids_batch, input_masks_batch, possible_spans_batch)
+                pred_probs = self.get_probs(move_to(input_ids_batch, consts.DEVICE), move_to(input_masks_batch, consts.DEVICE), move_to(possible_spans_batch, consts.DEVICE))
                 pred_probs = pred_probs.detach().cpu().numpy()
                 assert len(pred_probs) == sum([len(spans) for spans in possible_spans_batch])
                 assert input_ids_batch.shape[0] == input_masks_batch.shape[0] == len(possible_spans_batch)

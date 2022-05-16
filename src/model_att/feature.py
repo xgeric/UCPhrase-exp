@@ -5,6 +5,7 @@ import numpy as np
 from tqdm import tqdm
 from pathlib import Path
 from model_base.base import BaseFeatureExtractor
+from utils import move_to
 
 
 class FeatureExtractor(BaseFeatureExtractor):
@@ -20,7 +21,8 @@ class FeatureExtractor(BaseFeatureExtractor):
         input_idmasks_spans_batches = self._batchify(marked_sents)
         with torch.no_grad():
             for input_ids_batch, input_masks_batch, _ in tqdm(input_idmasks_spans_batches, ncols=100, desc='inference'):
-                model_output = consts.LM_MODEL(input_ids_batch, attention_mask=input_masks_batch,
+                model_output = consts.LM_MODEL(move_to(input_ids_batch, consts.DEVICE),
+                                               attention_mask=move_to(input_masks_batch, consts.DEVICE),
                                                output_hidden_states=False,
                                                output_attentions=True,
                                                return_dict=True)

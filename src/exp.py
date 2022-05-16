@@ -94,7 +94,7 @@ class Experiment:
         test_preprocessor = None
         if for_tagging:
             test_preprocessor = Preprocessor(
-                path_corpus=self.data_config.path_tagging_docs,
+                path_corpus=self.data_config.path_test,
                 num_cores=consts.NUM_CORES,
                 use_cache=True)
         else:
@@ -149,5 +149,8 @@ if __name__ == '__main__':
     exp = Experiment()
     exp.train()
     best_epoch = exp.select_best_epoch()
+    path_ckpt = exp.trainer.output_dir / f'epoch-{best_epoch}.ckpt'
+    model: model_base.BaseModel = model_base.BaseModel.load_ckpt(path_ckpt).eval()
+    torch.save(model.state_dict(), exp.trainer.output_dir / 'model.pth')
     exp.predict(epoch=best_epoch, for_tagging=True)
     exp.predict(epoch=best_epoch, for_tagging=False)

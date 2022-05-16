@@ -10,7 +10,7 @@ from preprocess.annotator_base import BaseAnnotator
 
 
 MINCOUNT = 2
-MINGRAMS = 2
+MINGRAMS = 1
 MAXGRAMS = consts.MAX_WORD_GRAM
 
 
