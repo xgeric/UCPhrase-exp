@@ -19,7 +19,7 @@ PUNCS_SET = set(string.punctuation) - {'-'}
 STPWD_SET = set(utils.TextFile.readlines('../data/stopwords.txt'))
 with open('../data/products_found_in_staging.pkl', 'rb') as f:
     CUSTOM_KEYPHRASES = pickle.load(f)
-CUSTOM_KEYPHRASES = []
+
 print("CUSTOM_KEYPHRASES", CUSTOM_KEYPHRASES)
 
 

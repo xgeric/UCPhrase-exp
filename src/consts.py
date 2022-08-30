@@ -70,7 +70,7 @@ MAX_SUBWORD_GRAM = 10
 NEGATIVE_RATIO = 1
 
 # multiprocessing
-NUM_CORES = 1
+NUM_CORES = 16
 torch.set_num_threads(NUM_CORES)
 
 
