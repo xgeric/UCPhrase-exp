@@ -18,6 +18,7 @@ class FeatureExtractor(BaseFeatureExtractor):
         self.num_BERT_layers = num_BERT_layers
 
     def _get_model_outputs(self, marked_sents):
+        print(f"marked_sents", marked_sents[:5])
         input_idmasks_spans_batches = self._batchify(marked_sents)
         with torch.no_grad():
             for input_ids_batch, input_masks_batch, _ in tqdm(input_idmasks_spans_batches, ncols=100, desc='inference'):

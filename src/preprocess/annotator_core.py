@@ -2,6 +2,7 @@ import utils
 import consts
 import string
 import functools
+import pickle
 from tqdm import tqdm
 from collections import Counter
 from collections import defaultdict
@@ -10,25 +11,37 @@ from preprocess.annotator_base import BaseAnnotator
 
 
 MINCOUNT = 2
-MINGRAMS = 1
+MINGRAMS = 2
 MAXGRAMS = consts.MAX_WORD_GRAM
 
 
 PUNCS_SET = set(string.punctuation) - {'-'}
 STPWD_SET = set(utils.TextFile.readlines('../data/stopwords.txt'))
+with open('../data/products_found_in_staging.pkl', 'rb') as f:
+    CUSTOM_KEYPHRASES = pickle.load(f)
+CUSTOM_KEYPHRASES = []
+print("CUSTOM_KEYPHRASES", CUSTOM_KEYPHRASES)
 
 
 @functools.lru_cache(maxsize=100000)
 def is_valid_ngram(ngram: list):
+    valid_ngram = True
     for token in ngram:
+        # Discard digit tokens, empty tokens and STOPWORDS
         if not token or token in STPWD_SET or token.isdigit():
-            return False
+            valid_ngram=False
+    # Set of characters of the ngram
     charset = set(''.join(ngram))
+    # Empty set of characters or intersection with punctuactions
     if not charset or (charset & (PUNCS_SET)):
-        return False
+        valid_ngram=False
+    # ngrams such as 'networks-' are not valid
     if ngram[0].startswith('-') or ngram[-1].endswith('-'):
-        return False
-    return True
+        valid_ngram=False
+
+    if ' '.join(ngram) in CUSTOM_KEYPHRASES and not valid_ngram:
+        print(f"ngram {ngram} is not valid")
+    return valid_ngram
 
 
 class CoreAnnotator(BaseAnnotator):
@@ -51,14 +64,42 @@ class CoreAnnotator(BaseAnnotator):
             for n in range(MINGRAMS, MAXGRAMS + 2):
                 for i_word in range(num_words - n + 1):
                     l_idx = widxs[i_word]
+                    # print("l-id", l_idx)
                     r_idx = widxs[i_word + n] - 1
+                    # print("r_idx", r_idx)
                     ngram = tuple(tokens[l_idx: r_idx + 1])
+                    # Ġme chat ronics Ġapproach -> 'mechatronics', 'approach'
                     ngram = tuple(''.join(ngram).split(consts.GPT_TOKEN.lower())[1:])
-                    if is_valid_ngram(ngram):
+
+                    # If ngram is an User Keyphrase, add it to the phrase2cnt and phrase2instances
+                    if ' '.join(ngram) in CUSTOM_KEYPHRASES:
+                        print(f"Custom keyphrase:  {' '.join(ngram)}")
                         phrase = ' '.join(ngram)
                         phrase2cnt[phrase] += 1
                         phrase2instances[phrase].append([i_sent, l_idx, r_idx])
-        phrases = [phrase for phrase, count in phrase2cnt.items() if count >= MINCOUNT]
+                        continue
+
+                    # if ' '.join(ngram) in CUSTOM_KEYPHRASES:
+                    if is_valid_ngram(ngram):
+                        phrase = ' '.join(ngram)
+                        # print("phrase", phrase)
+                        phrase2cnt[phrase] += 1
+                        # Store the index of the sentence, the start and end
+                        phrase2instances[phrase].append([i_sent, l_idx, r_idx])
+
+        # Filter phrases with less than MINCOUNT instances
+        phrases = []
+        show = False
+        for phrase, count in phrase2cnt.items():
+            # If phrase is an user keyphrase, don't filter it
+            if phrase in CUSTOM_KEYPHRASES:
+                phrases.append(phrase)
+                show = True
+                continue
+
+            if count >= MINCOUNT:
+                phrases.append(phrase)
+
         phrases = sorted(phrases, key=lambda p: len(p), reverse=True)
         cleaned_phrases = set()
         for p in phrases:
@@ -71,6 +112,8 @@ class CoreAnnotator(BaseAnnotator):
                 cleaned_phrases.add(p)
         phrase2instances = {p: phrase2instances[p] for p in cleaned_phrases}
 
+        if show:
+            print(phrase2instances)
         return phrase2instances
 
     def _mark_corpus(self):
