@@ -17,7 +17,16 @@ nlp_model.add_pipe(LanguageDetector(), name="language_detector", last=True)
 
 # TODO: Filter based on review sources - create dictionary
 with open('./data/review_sources_patterns.txt') as f:
-    review_sources_patterns = f.readlines()
+    review_sources_patterns = f.read().splitlines()
+
+print(review_sources_patterns)
+
+
+regexes = []
+for pattern in review_sources_patterns:
+    regexes.append(r"\b{p}\b".format(p=pattern))
+# Creates a regex that matches if any of our regexes match.
+combined = "(" + ")|(".join(regexes) + ")"
 
 
 def detect_lang(text: str) -> str:
@@ -76,12 +85,18 @@ def prepare_dataset(size: int, output_dir: Optional[str], test_size: float, bigq
                 continue
 
             full_content = ""
-            if re.findall("What problems is the product solving and how is that benefiting you?", row["content"]):
-                print(row["content"])
             if row["title"]:
                 full_content += clean_text(row["title"]) + ".\n"
             if row["content"]:
                 full_content += clean_text(row["content"])
+
+            # Filter patterns
+            matches = re.findall(combined, full_content)
+            for match in matches:
+                # Find matches
+                idx = list(map(bool, match)).index(True)
+                match = review_sources_patterns[idx]
+                full_content = full_content.replace(match, ".")
 
             row_dict = {"_id_": row["id"], "sents": sent_tokenize(full_content)}
 
@@ -90,7 +105,6 @@ def prepare_dataset(size: int, output_dir: Optional[str], test_size: float, bigq
                 test_file.write(json.dumps(row_dict) + "\n")
             else:
                 train_file.write(json.dumps(row_dict) + "\n")
-            break
 
     with open(os.path.join(standard_folder, "stem.doc2references.json"), "w") as f:
         json.dump({}, f)

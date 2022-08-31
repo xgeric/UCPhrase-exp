@@ -7,4 +7,13 @@ Other Software Used
 Alternatives Considered
 What do you like best?
 What do you dislike?
+What problems are you solving with the product?
+What benefits have you realized?
 What problems is the product solving and how is that benefiting you?
+What is our primary use case?
+How has it helped my organization?
+What is most valuable?
+What needs improvement?
+For how long have I used the solution?
+What do I think about the stability of the solution?
+What do I think about the scalability of the solution?
