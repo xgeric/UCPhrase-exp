@@ -20,6 +20,7 @@ STPWD_SET = set(utils.TextFile.readlines('../data/stopwords.txt'))
 with open('../data/products_found_in_staging.pkl', 'rb') as f:
     CUSTOM_KEYPHRASES = pickle.load(f)
 
+print("LENTH OF CUSTOM KEYPHRASES", len(CUSTOM_KEYPHRASES))
 print("CUSTOM_KEYPHRASES", CUSTOM_KEYPHRASES)
 
 
@@ -29,14 +30,17 @@ def is_valid_ngram(ngram: list):
     for token in ngram:
         # Discard digit tokens, empty tokens and STOPWORDS
         if not token or token in STPWD_SET or token.isdigit():
+            print("here1")
             valid_ngram=False
     # Set of characters of the ngram
     charset = set(''.join(ngram))
     # Empty set of characters or intersection with punctuactions
     if not charset or (charset & (PUNCS_SET)):
+        print("here2")
         valid_ngram=False
     # ngrams such as 'networks-' are not valid
     if ngram[0].startswith('-') or ngram[-1].endswith('-'):
+        print("here3")
         valid_ngram=False
 
     if ' '.join(ngram) in CUSTOM_KEYPHRASES and not valid_ngram:
@@ -50,37 +54,55 @@ class CoreAnnotator(BaseAnnotator):
 
     @staticmethod
     def _par_mine_doc_phrases(doc_tuple):
+        print("_PAR MINE DOC PHRASES - Core")
         tokenized_doc, tokenized_id_doc = doc_tuple
         assert tokenized_doc['_id_'] == tokenized_id_doc['_id_']
         assert len(tokenized_doc['sents']) == len(tokenized_id_doc['sents'])
 
+        # Create keyphrases for each document
         phrase2cnt = Counter()
         phrase2instances = defaultdict(list)
         for i_sent, (sent, sent_dict) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'])):
+            print("------------------------------------------------------------")
+            print("sent", sent)
             tokens = sent.lower().split()
+            print("Length tokens", len(tokens))
             widxs = sent_dict['widxs']
             num_words = len(widxs)
+            print("num words", num_words)
             widxs.append(len(tokens))  # for convenience
+            # Iterave over all ngrams of length MINGRAMS to MAXGRAMS
+            # First iteration: [an ontology]
+            # Second iteration: [an ontology modelling]
+            # ...
+            # Store frequency of the ngrams
             for n in range(MINGRAMS, MAXGRAMS + 2):
+                print("........................................................")
+                print("N", n)
+                print("range", num_words - n + 1)
                 for i_word in range(num_words - n + 1):
+                    print( )
+                    print("i_word", i_word)
                     l_idx = widxs[i_word]
-                    # print("l-id", l_idx)
+                    print("l-id", l_idx)
                     r_idx = widxs[i_word + n] - 1
-                    # print("r_idx", r_idx)
+                    print("r_idx", r_idx)
                     ngram = tuple(tokens[l_idx: r_idx + 1])
+                    print("ngram", ngram)
                     # Ġme chat ronics Ġapproach -> 'mechatronics', 'approach'
                     ngram = tuple(''.join(ngram).split(consts.GPT_TOKEN.lower())[1:])
 
-                    # If ngram is an User Keyphrase, add it to the phrase2cnt and phrase2instances
+                    # If ngram is User Keyphrase, add it to the phrase2cnt and phrase2instances
                     if ' '.join(ngram) in CUSTOM_KEYPHRASES:
                         print(f"Custom keyphrase:  {' '.join(ngram)}")
-                        phrase = ' '.join(ngram)
-                        phrase2cnt[phrase] += 1
-                        phrase2instances[phrase].append([i_sent, l_idx, r_idx])
-                        continue
+                        # phrase = ' '.join(ngram)
+                        # phrase2cnt[phrase] += 1
+                        # phrase2instances[phrase].append([i_sent, l_idx, r_idx])
+                        # continue
 
                     # if ' '.join(ngram) in CUSTOM_KEYPHRASES:
                     if is_valid_ngram(ngram):
+                        print("is valid")
                         phrase = ' '.join(ngram)
                         # print("phrase", phrase)
                         phrase2cnt[phrase] += 1
@@ -91,7 +113,9 @@ class CoreAnnotator(BaseAnnotator):
         phrases = []
         show = False
         for phrase, count in phrase2cnt.items():
-            # If phrase is an user keyphrase, don't filter it
+            print("phrase", phrase)
+            print("count", count)
+            # If phrase is user keyphrase, don't filter it
             if phrase in CUSTOM_KEYPHRASES:
                 phrases.append(phrase)
                 show = True
@@ -117,8 +141,11 @@ class CoreAnnotator(BaseAnnotator):
         return phrase2instances
 
     def _mark_corpus(self):
+        print("_MARK CORPUS - Core")
+        # Load tokenizer dataset
         tokenized_docs = utils.JsonLine.load(self.path_tokenized_corpus)
         tokenized_id_docs = utils.JsonLine.load(self.path_tokenized_id_corpus)
+        # Parallelize mining of phrases
         phrase2instances_list = utils.Process.par(
             func=CoreAnnotator._par_mine_doc_phrases,
             iterables=list(zip(tokenized_docs, tokenized_id_docs)),

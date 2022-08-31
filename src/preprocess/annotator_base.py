@@ -18,7 +18,9 @@ class BaseAnnotator:
 
     @staticmethod
     def _par_sample_train_data(marked_doc):
+        print("Processing sents with POS and NEG samples - base")
         sents = marked_doc['sents']
+        # Here, we should insert the negative keyphrases such as `product solving`
         for sent in sents:
             phrases = sent['phrases']
             assert phrases
@@ -26,7 +28,13 @@ class BaseAnnotator:
             num_positive = len(positive_spans)
             # sample negatives
             word_idxs = sent['widxs']
+            # Iterave over all ngrams of length MINGRAMS to MAXGRAMS
+            # (0, 4), (1, 5)...
+            # (0, 3), (1, 4), ...
+            # (0, 2), (1, 3), ...
+            # (0, 1), (1, 2), ...
             all_spans = utils.get_possible_spans(word_idxs, len(sent['ids']), consts.MAX_WORD_GRAM, consts.MAX_SUBWORD_GRAM)
+            # Discard positive spans in negative_spans
             possible_negative_spans = set(all_spans) - set(positive_spans)
             num_negative = min(len(possible_negative_spans), int(num_positive * consts.NEGATIVE_RATIO))
             sampled_negative_spans = random.sample(possible_negative_spans, k=num_negative)
@@ -36,6 +44,7 @@ class BaseAnnotator:
         return marked_doc
 
     def sample_train_data(self):
+        print("SAMPLE TRAIN DATA - base")
         assert utils.IO.is_valid_file(self.path_marked_corpus)
 
         path_output = self.dir_output / f'sampled.neg{consts.NEGATIVE_RATIO}.{self.path_marked_corpus.name}'
@@ -50,6 +59,7 @@ class BaseAnnotator:
 
     @staticmethod
     def get_path_sampled_train_spans(path_sampled_train_data):
+        print("GET PATH SAMPLED TRAIN - base")
         path_sampled_train_data = Path(path_sampled_train_data)
         path_output = path_sampled_train_data.with_name(f'{path_sampled_train_data.stem}.spans.json')
         if path_output.exists():
@@ -79,14 +89,19 @@ class BaseAnnotator:
         raise NotImplementedError
 
     def mark_corpus(self):
+        print("MARK CORPUS - base")
         if self.use_cache and utils.IO.is_valid_file(self.path_marked_corpus):
             print(f'[Annotate] Use cache: {self.path_marked_corpus}')
             return
+        # This _mark_corpus is coming from annotator_core
+        print("Calling _mark_corpus - base")
         marked_corpus = self._mark_corpus()
-        # Remove empty sents and docs
+        # Remove empty sents and docs - keep sentences with at least one phrase
+        print("Remove empty sents - base")
         for raw_id_doc in marked_corpus:
             for sent in raw_id_doc['sents']:
                 sent['phrases'] = [p for p in sent['phrases'] if p[0][1] - p[0][0] + 1 <= consts.MAX_SUBWORD_GRAM]
             raw_id_doc['sents'] = [s for s in raw_id_doc['sents'] if s['phrases']]
         marked_corpus = [d for d in marked_corpus if d['sents']]
+        print("Store _mark_corpus in : ", self.path_marked_corpus, " - base")
         utils.JsonLine.dump(marked_corpus, self.path_marked_corpus)

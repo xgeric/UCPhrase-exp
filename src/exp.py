@@ -53,6 +53,8 @@ class Experiment:
             )
         }[self.config['annotator']]
 
+        print("train annotator", type(self.train_annotator))
+
         # model
         model_prefix = '.' + ARGS.model_prefix if ARGS.model_prefix else ''
         model_dir = self.dir_exp / f'model{model_prefix}'
@@ -75,8 +77,12 @@ class Experiment:
             )
 
     def train(self, num_epochs=20):
+        print("TOKENIZE")
         self.train_preprocessor.tokenize_corpus()
+        print("MARK CORPUS")
+        # This mark_corpus function is from anotator_base
         self.train_annotator.mark_corpus()
+        # Sample train data
         path_sampled_train_data = self.train_annotator.sample_train_data()
         self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
 

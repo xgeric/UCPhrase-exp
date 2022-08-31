@@ -67,10 +67,12 @@ HTML_EP = '</span>'
 MAX_SENT_LEN = 64
 MAX_WORD_GRAM = 5
 MAX_SUBWORD_GRAM = 10
+# Number of negative candidates
+# NEGATIVE_RATIO = 1 - positive_keyphrases = 3 | then: negative_keyphrases = 3
 NEGATIVE_RATIO = 1
 
 # multiprocessing
-NUM_CORES = 16
+NUM_CORES = 1
 torch.set_num_threads(NUM_CORES)
 
 
