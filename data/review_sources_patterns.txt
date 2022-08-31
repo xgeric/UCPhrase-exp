@@ -8,6 +8,7 @@ Alternatives Considered
 What do you like best?
 What do you dislike?
 What problems are you solving with the product?
+What do you like most about the product or service?
 What benefits have you realized?
 What problems is the product solving and how is that benefiting you?
 What is our primary use case?
@@ -17,3 +18,4 @@ What needs improvement?
 For how long have I used the solution?
 What do I think about the stability of the solution?
 What do I think about the scalability of the solution?
+Review collected by and hosted on G2.com.
