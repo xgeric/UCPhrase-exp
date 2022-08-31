@@ -52,7 +52,6 @@ def clean_text(text: str) -> str:
 @click.option("--test_size", required=False, default=0.1, type=float)
 @click.option("--bigquery_table", required=False, default="staging_klue_reviews", type=str)
 def prepare_dataset(size: int, output_dir: Optional[str], test_size: float, bigquery_table: str):
-    print(output_dir)
     if output_dir is None:
         output_dir = tempfile.mkdtemp(prefix="klue_")
 

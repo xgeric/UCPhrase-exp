@@ -59,7 +59,6 @@ class BaseAnnotator:
 
     @staticmethod
     def get_path_sampled_train_spans(path_sampled_train_data):
-        print("GET PATH SAMPLED TRAIN - base")
         path_sampled_train_data = Path(path_sampled_train_data)
         path_output = path_sampled_train_data.with_name(f'{path_sampled_train_data.stem}.spans.json')
         if path_output.exists():
@@ -89,19 +88,15 @@ class BaseAnnotator:
         raise NotImplementedError
 
     def mark_corpus(self):
-        print("MARK CORPUS - base")
         if self.use_cache and utils.IO.is_valid_file(self.path_marked_corpus):
             print(f'[Annotate] Use cache: {self.path_marked_corpus}')
             return
         # This _mark_corpus is coming from annotator_core
-        print("Calling _mark_corpus - base")
         marked_corpus = self._mark_corpus()
         # Remove empty sents and docs - keep sentences with at least one phrase
-        print("Remove empty sents - base")
         for raw_id_doc in marked_corpus:
             for sent in raw_id_doc['sents']:
                 sent['phrases'] = [p for p in sent['phrases'] if p[0][1] - p[0][0] + 1 <= consts.MAX_SUBWORD_GRAM]
             raw_id_doc['sents'] = [s for s in raw_id_doc['sents'] if s['phrases']]
         marked_corpus = [d for d in marked_corpus if d['sents']]
-        print("Store _mark_corpus in : ", self.path_marked_corpus, " - base")
         utils.JsonLine.dump(marked_corpus, self.path_marked_corpus)

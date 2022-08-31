@@ -77,9 +77,7 @@ class Experiment:
             )
 
     def train(self, num_epochs=20):
-        print("TOKENIZE")
         self.train_preprocessor.tokenize_corpus()
-        print("MARK CORPUS")
         # This mark_corpus function is from anotator_base
         self.train_annotator.mark_corpus()
         # Sample train data

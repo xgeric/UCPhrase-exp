@@ -18,7 +18,6 @@ class FeatureExtractor(BaseFeatureExtractor):
         self.num_BERT_layers = num_BERT_layers
 
     def _get_model_outputs(self, marked_sents):
-        print(f"marked_sents", marked_sents[:5])
         input_idmasks_spans_batches = self._batchify(marked_sents)
         with torch.no_grad():
             for input_ids_batch, input_masks_batch, _ in tqdm(input_idmasks_spans_batches, ncols=100, desc='inference'):
@@ -50,7 +49,6 @@ class FeatureExtractor(BaseFeatureExtractor):
         path_sampled_docs = Path(path_sampled_docs)
         path_prefix = 'train.' + f'{max_num_docs}docs.' * (max_num_docs is not None)
         path_output = (self.output_dir / path_sampled_docs.name.replace('sampled.', path_prefix)).with_suffix('.pk')
-        print("PATH OUTPUT", path_output)
         if self.use_cache and utils.IO.is_valid_file(path_output):
             print(f'[Feature] Use cache: {path_output}')
             return path_output

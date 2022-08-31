@@ -21,9 +21,7 @@ class AttmapTrainLoader:
 
     def get_loader(self, instances, is_train=True):
         batch_size = self.get_batch_size()
-        print(f'original training instances: {len(instances)}')
         instances = [instance for instance in instances if instance[2].shape[-1] <= self.max_num_subwords]
-        print(f'useful training instances: {len(instances)}')
         gtlabels = [instance[0] for instance in instances]
         spanlens = [instance[1] for instance in instances]
         attention_maps = [instance[2] for instance in instances]
