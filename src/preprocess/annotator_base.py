@@ -78,15 +78,33 @@ class BaseAnnotator:
     def _mark_corpus(self):
         raise NotImplementedError
 
+    def _mark_corpus_NEW(self):
+        raise NotImplementedError
+
     def mark_corpus(self):
         if self.use_cache and utils.IO.is_valid_file(self.path_marked_corpus):
             print(f'[Annotate] Use cache: {self.path_marked_corpus}')
             return
         marked_corpus = self._mark_corpus()
+
+        ##insert our own method - nope, that belongs in Core Annotator
+        # marked_corpus = self._mark_corpus_NEW()
+        
+        
         # Remove empty sents and docs
         for raw_id_doc in marked_corpus:
             for sent in raw_id_doc['sents']:
-                sent['phrases'] = [p for p in sent['phrases'] if p[0][1] - p[0][0] + 1 <= consts.MAX_SUBWORD_GRAM]
-            raw_id_doc['sents'] = [s for s in raw_id_doc['sents'] if s['phrases']]
+                ##super patchwork to cover when its not in length
+                try:
+                    sent['phrases'] = [p for p in sent['phrases'] if p[0][1] - p[0][0] + 1 <= consts.MAX_SUBWORD_GRAM]
+                except:
+                    #pass
+                    assert 1 == 1
+            ##also patchwork
+            try:
+                raw_id_doc['sents'] = [s for s in raw_id_doc['sents'] if s['phrases']]
+            except:
+                #pass
+                assert 1 == 1
         marked_corpus = [d for d in marked_corpus if d['sents']]
         utils.JsonLine.dump(marked_corpus, self.path_marked_corpus)

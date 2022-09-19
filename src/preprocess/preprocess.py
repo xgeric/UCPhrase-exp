@@ -11,7 +11,7 @@ class Preprocessor:
             self,
             path_corpus,
             num_cores=8,
-            use_cache=True):
+            use_cache=False):
         self.use_cache = use_cache
         self.num_cores = num_cores
 

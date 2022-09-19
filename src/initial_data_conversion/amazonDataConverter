@@ -1,0 +1,69 @@
+import json
+# import utils
+import tqdm
+from pathlib import Path
+
+# class AmazonDataConverter:
+
+#     def __init__(self):
+#         pass
+
+#     def convert():
+
+class IO:
+    @staticmethod
+    def is_valid_file(filepath):
+        filepath = Path(filepath)
+        return filepath.exists() and filepath.stat().st_size > 0
+
+    def load(path):
+        raise NotImplementedError
+
+    def dump(data, path):
+        raise NotImplementedError
+
+class JsonLine(IO):
+    @staticmethod
+    def load(path, use_tqdm=False):
+        with open(path) as rf:
+            lines = rf.read().splitlines()
+        if use_tqdm:
+            lines = tqdm(lines, ncols=100, desc='Load JsonLine')
+        return [json.loads(l) for l in lines]
+
+    @staticmethod
+    def dump(instances, path):
+        # assert type(instances) == list
+        lines = [json.dumps(d, ensure_ascii=False) for d in instances]
+        with open(path, 'w') as wf:
+            wf.write('\n'.join(lines))
+
+inputFile = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.jsonl"
+outputFile = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.trainTEST.jsonl"
+
+data = JsonLine.load(inputFile)
+
+# with open(file, 'r') as json_file:
+#     json_list = list(json_file)
+# for json_str in json_list:
+#     result = json.loads(json_str)
+#     data.append(result)
+
+print(data[1]['asin'])
+
+# eval_result = {
+#             'infos': data[0]['asin'],
+#             'test' : 'test'
+#         }
+
+eval_result = {
+            'metrics': {
+                'num_cands': 1,
+                'macro_recall': 1,
+                'micro_recall': 1,
+            },
+            'infos': 1,
+        }
+
+for product in data:
+    JsonLine.dump(eval_result, outputFile)

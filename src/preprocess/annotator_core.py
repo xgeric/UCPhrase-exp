@@ -1,3 +1,4 @@
+from ossaudiodev import SOUND_MIXER_TREBLE
 import utils
 import consts
 import string
@@ -7,6 +8,7 @@ from collections import Counter
 from collections import defaultdict
 from preprocess.preprocess import Preprocessor
 from preprocess.annotator_base import BaseAnnotator
+from flashtext import KeywordProcessor ##added this one
 
 
 MINCOUNT = 2
@@ -72,21 +74,108 @@ class CoreAnnotator(BaseAnnotator):
         phrase2instances = {p: phrase2instances[p] for p in cleaned_phrases}
 
         return phrase2instances
+    
+    ## our method to replace theirs
+    @staticmethod
+    def _par_mine_doc_phrases_NEW(doc_tuple):
+        #not sure if necessary - take in input information and make sure IDs and number of docs match up
+        tokenized_doc, tokenized_id_doc, candidate_doc = doc_tuple
+
+        assert tokenized_doc['_id_'] == tokenized_id_doc['_id_']        
+        assert len(tokenized_doc['sents']) == len(tokenized_id_doc['sents'])
+
+        # actually, I need candidate values too. Maybe don't do them here since all are present.
+        # candidate_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl")
+        # for doc in candidate_docs:
+        #     if doc['_id_'] == tokenized_doc['_id_']:
+        #         candidate_doc = doc
+        #         # print(tokenized_doc['_id_'])
+        #         # print(candidate_doc['_id_'])
+        #         print(candidate_doc)
+        #         break
+        # print(str(candidate_doc))
+
+        #set up phrase2instances
+        phrase2cnt = Counter()
+        phrase2instances = defaultdict(list)
+
+        #fill in rest of code about string matching
+        
+        ##not implemented yet, use phrases from candidate and match to the raw sentence doc
+        keyword_processor = KeywordProcessor()
+        keyword_processor.add_keywords_from_list(candidate_doc)
+
+        #very slow, patchwork until original conversion step created
+        segmented_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
+        for doc in segmented_sentences_docs:
+            if doc['_id_'] == tokenized_doc['_id_']:
+                segmented_sentences_doc = doc
+                # print(tokenized_doc['_id_'])
+                # print(raw_sentences_doc['_id_'])
+                keywords_found = []
+                for s in segmented_sentences_doc['sents']:
+                    #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
+                    keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
+                
+                # print(keywords_found)
+
+                for keywords in keywords_found:
+                    phrase = str(keywords)
+                    #made up numbers for the ids below, FIX THIS LATER
+                    phrase2instances[phrase].append([0, 0, 1])
+
+                return phrase2instances
+                #correct doc has been found, so we can exit
+                break
+        
+        return phrase2instances
 
     def _mark_corpus(self):
         tokenized_docs = utils.JsonLine.load(self.path_tokenized_corpus)
         tokenized_id_docs = utils.JsonLine.load(self.path_tokenized_id_corpus)
+
+        ## for later, load in the raw segmented sentences and then feed into par NEW
+        # raw_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
+
+        #for later, load in the  sentences and then feed into par NEW
+        candidates_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl")
+
+        # phrase2instances_list = utils.Process.par(
+        #     func=CoreAnnotator._par_mine_doc_phrases,
+        #     iterables=list(zip(tokenized_docs, tokenized_id_docs)),
+        #     num_processes=consts.NUM_CORES,
+        #     desc='[CoreAnno] Mine phrases'
+        # )
+
+        # # figuring out what's going on
+        # print("Phrase2instances_list is " + str(len(phrase2instances_list)))
+        # count = 0
+        # for item in phrase2instances_list:
+        #     if count > 50:
+        #         break
+        #     print("\n New item")
+        #     print("\n _________________ \n Phrase2instances_list item is " + str(item))
+        #     count += 1
+
+        ## We will change phrase2instances_list instead of this entire _mark_corpus method
         phrase2instances_list = utils.Process.par(
-            func=CoreAnnotator._par_mine_doc_phrases,
-            iterables=list(zip(tokenized_docs, tokenized_id_docs)),
+            func=CoreAnnotator._par_mine_doc_phrases_NEW,
+            iterables=list(zip(tokenized_docs, tokenized_id_docs, candidates_docs)),
             num_processes=consts.NUM_CORES,
             desc='[CoreAnno] Mine phrases'
         )
+
         doc2phrases = dict()
         for i_doc, doc in tqdm(list(enumerate(tokenized_id_docs)), ncols=100, desc='[CoreAnno] Tag docs'):
             for s in doc['sents']:
                 s['phrases'] = []
-            phrase2instances = phrase2instances_list[i_doc]
+            try:
+                phrase2instances = phrase2instances_list[i_doc]
+            except:
+                #bad practice, but patchwork will break out of loop if this doesn't work
+                # print("Length of phrase2instances_list is " + str(len(phrase2instances_list)))
+                # print("i_doc is " + str(i_doc))
+                break
             doc2phrases[doc['_id_']] = list(phrase2instances.keys())
             for phrase, instances in phrase2instances.items():
                 for i_sent, l_idx, r_idx in instances:
@@ -94,3 +183,16 @@ class CoreAnnotator(BaseAnnotator):
         utils.Json.dump(doc2phrases, self.dir_output / f'doc2phrases.{self.path_tokenized_corpus.stem}.json')
 
         return tokenized_id_docs
+
+    ## Was our method to replace their _mark_corpus
+    ## isn't fully necessary, we can just replace the _par_mine_doc_phrases_NEW method
+    # def _mark_corpus_NEW(self):
+    #     tokenized_docs = utils.JsonLine.load(self.path_tokenized_corpus)
+    #     tokenized_id_docs = utils.JsonLine.load(self.path_tokenized_id_corpus)
+        
+    #     doc2phrases = dict()
+    #     for i_doc, doc in tqdm(list(enumerate(tokenized_id_docs)), ncols=100, desc='[CoreAnno] Tag docs'):
+    #         for s in doc['sents']:
+    #             s['phrases'] = []
+        
+    #     return tokenized_id_docs

@@ -5,12 +5,14 @@ import consts
 import model_att
 import model_emb
 import model_base
+# import initial_data_conversion
+# from initial_data_conversion import AmazonDataConverter
 from tqdm import tqdm
 from consts import ARGS
 from pathlib import Path
 from preprocess import Preprocessor
 from preprocess import BaseAnnotator
-from preprocess import WikiAnnotator
+# from preprocess import WikiAnnotator
 from preprocess import CoreAnnotator
 
 
@@ -42,13 +44,13 @@ class Experiment:
 
         # annotator (supervision)
         self.train_annotator: BaseAnnotator = {
-            'wiki': WikiAnnotator(
-                use_cache=True,
-                preprocessor=self.train_preprocessor,
-                path_standard_phrase=self.data_config.path_phrase
-            ),
+            # 'wiki': WikiAnnotator(
+            #     use_cache=True,
+            #     preprocessor=self.train_preprocessor,
+            #     path_standard_phrase=self.data_config.path_phrase
+            # ),
             'core': CoreAnnotator(
-                use_cache=True,
+                use_cache=False,
                 preprocessor=self.train_preprocessor
             )
         }[self.config['annotator']]
@@ -73,10 +75,14 @@ class Experiment:
             )
 
     def train(self, num_epochs=20):
+        # conv = AmazonDataConverter()
+        # conv.convert()
+        # initial_data_conversion
         self.train_preprocessor.tokenize_corpus()
-        self.train_annotator.mark_corpus()
-        path_sampled_train_data = self.train_annotator.sample_train_data()
-        self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
+        # self.train_annotator.mark_corpus()
+
+        # path_sampled_train_data = self.train_annotator.sample_train_data()
+        # self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
 
     def select_best_epoch(self):
         paths_ckpt = [p for p in self.trainer.output_dir.iterdir() if p.suffix == '.ckpt']
@@ -148,6 +154,6 @@ class Experiment:
 if __name__ == '__main__':
     exp = Experiment()
     exp.train()
-    best_epoch = exp.select_best_epoch()
-    exp.predict(epoch=best_epoch, for_tagging=True)
-    exp.predict(epoch=best_epoch, for_tagging=False)
+    # best_epoch = exp.select_best_epoch()
+    # exp.predict(epoch=best_epoch, for_tagging=True)
+    # exp.predict(epoch=best_epoch, for_tagging=False)
