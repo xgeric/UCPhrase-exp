@@ -49,9 +49,9 @@ class Preprocessor:
         return tokenized_doc, tokenized_id_doc
 
     def tokenize_corpus(self):
-        if self.use_cache and utils.IO.is_valid_file(self.path_tokenized_corpus) and utils.IO.is_valid_file(self.path_tokenized_id_corpus):
-            print(f'[Preprocessor] Use cache: {self.path_tokenized_corpus}')
-            return
+        # if self.use_cache and utils.IO.is_valid_file(self.path_tokenized_corpus) and utils.IO.is_valid_file(self.path_tokenized_id_corpus):
+        #     print(f'[Preprocessor] Use cache: {self.path_tokenized_corpus}')
+        #     return
         docs = utils.JsonLine.load(self.path_corpus)
         pool = Pool(processes=self.num_cores)
         pool_func = pool.imap(func=Preprocessor._par_tokenize_doc, iterable=docs)

@@ -79,7 +79,7 @@ class Experiment:
         # conv.convert()
         # initial_data_conversion
         self.train_preprocessor.tokenize_corpus()
-        # self.train_annotator.mark_corpus()
+        self.train_annotator.mark_corpus()
 
         # path_sampled_train_data = self.train_annotator.sample_train_data()
         # self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)

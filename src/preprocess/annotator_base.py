@@ -94,17 +94,13 @@ class BaseAnnotator:
         # Remove empty sents and docs
         for raw_id_doc in marked_corpus:
             for sent in raw_id_doc['sents']:
-                ##super patchwork to cover when its not in length
                 try:
                     sent['phrases'] = [p for p in sent['phrases'] if p[0][1] - p[0][0] + 1 <= consts.MAX_SUBWORD_GRAM]
                 except:
-                    #pass
-                    assert 1 == 1
-            ##also patchwork
+                    pass
             try:
                 raw_id_doc['sents'] = [s for s in raw_id_doc['sents'] if s['phrases']]
             except:
-                #pass
-                assert 1 == 1
+                pass
         marked_corpus = [d for d in marked_corpus if d['sents']]
         utils.JsonLine.dump(marked_corpus, self.path_marked_corpus)

@@ -79,60 +79,165 @@ class CoreAnnotator(BaseAnnotator):
     @staticmethod
     def _par_mine_doc_phrases_NEW(doc_tuple):
         #not sure if necessary - take in input information and make sure IDs and number of docs match up
-        tokenized_doc, tokenized_id_doc, candidate_doc = doc_tuple
+        tokenized_doc, tokenized_id_doc, candidate_doc, segmented_sentences_doc = doc_tuple
 
         assert tokenized_doc['_id_'] == tokenized_id_doc['_id_']        
         assert len(tokenized_doc['sents']) == len(tokenized_id_doc['sents'])
 
-        # actually, I need candidate values too. Maybe don't do them here since all are present.
-        # candidate_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl")
-        # for doc in candidate_docs:
-        #     if doc['_id_'] == tokenized_doc['_id_']:
-        #         candidate_doc = doc
-        #         # print(tokenized_doc['_id_'])
-        #         # print(candidate_doc['_id_'])
-        #         print(candidate_doc)
-        #         break
-        # print(str(candidate_doc))
+        # phrase2cnt = Counter()
+        # phrase2instances = defaultdict(list)
+
+        # #use phrases from candidate and match to the raw sentence doc
+        # keyword_processor = KeywordProcessor()
+        # keyword_processor.add_keywords_from_list(candidate_doc)
+
+        # keywords_found = []
+        # for s in segmented_sentences_doc['sents']:
+        #     #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
+        #     keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
+
+        # for i_sent, (sent, sent_dict) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'])):
+        #     tokens = sent.lower().split()
+        #     widxs = sent_dict['widxs']
+        #     num_words = len(widxs)
+        #     widxs.append(len(tokens))  # for convenience
+        #     for n in range(MINGRAMS, MAXGRAMS + 2):
+        #         for i_word in range(num_words - n + 1):
+        #             l_idx = widxs[i_word]
+        #             r_idx = widxs[i_word + n] - 1
+        #             ngram = tuple(tokens[l_idx: r_idx + 1])
+        #             ngram = tuple(''.join(ngram).split(consts.GPT_TOKEN.lower())[1:])
+        #             phrase = ' '.join(ngram)
+        #             # print(phrase)
+        #             flag = False
+        #             for keyword in keywords_found:
+        #                 if (keyword in phrase) :
+        #                     flag = True
+        #             if is_valid_ngram(ngram):
+        #                 phrase2cnt[phrase] += 1
+        #                 phrase2instances[phrase].append([i_sent, l_idx, r_idx])
+        # phrases = [phrase for phrase, count in phrase2cnt.items() if count >= MINCOUNT]
+        # phrases = sorted(phrases, key=lambda p: len(p), reverse=True)
+        # cleaned_phrases = set()
+        # for p in phrases:
+        #     has_longer_pattern = False
+        #     for cp in cleaned_phrases:
+        #         if p in cp:
+        #             has_longer_pattern = True
+        #             break
+        #     if not has_longer_pattern and len(p.split()) <= MAXGRAMS:
+        #         cleaned_phrases.add(p)
+        # phrase2instances = {p: phrase2instances[p] for p in cleaned_phrases}
+
+        # return phrase2instances
+
+
+        # for i_sent, (sent, sent_dict, candidates, sent_segmented) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'], candidate_doc['sents'], segmented_sentences_doc['sents'])):
+        # #     tokens = sent.lower().split()
+        #     widxs = sent_dict['widxs']
+        #     num_words = len(widxs)
+        # #     widxs.append(len(tokens))  # for convenience
+        # #     # keywords_found.extend(keyword_processor.extract_keywords(sent_segmented.lower()))
+        
+        #     for n in range(MINGRAMS, MAXGRAMS + 2):
+        #         for i_word in range(num_words - n + 1):
+        #             l_idx = widxs[i_word]
+        #             r_idx = widxs[i_word + n] - 1
+        #             ngram = tuple(tokens[l_idx: r_idx + 1])
+        #             ngram = tuple(''.join(ngram).split(consts.GPT_TOKEN.lower())[1:])
+                    
+                    
+        #             # phrase = str(keywords)
+        #             #made up numbers for the ids below, FIX THIS LATER
+                    
+        #             # for keywords in keywords_found:
+        #             #     key_phrase = str(keywords)
+        #             #     #made up numbers for the ids below, FIX THIS LATER
+        #             #     phrase2instances[key_phrase].append([0, 0, 1])
+        #             if is_valid_ngram(ngram):
+        #                 phrase = ' '.join(ngram)
+        #                 # phrase2instances[phrase].append([i_sent, l_idx, r_idx])
+        #                 phrase2cnt[phrase] += 1
+        #                 phrase2instances[phrase].append([i_sent, l_idx, r_idx])
+        # phrases = [phrase for phrase, count in phrase2cnt.items() if count >= MINCOUNT]
+        # phrases = sorted(phrases, key=lambda p: len(p), reverse=True)
+        # cleaned_phrases = set()
+        # for p in phrases:
+        #     has_longer_pattern = False
+        #     for cp in cleaned_phrases:
+        #         if p in cp:
+        #             has_longer_pattern = True
+        #             break
+        #     if not has_longer_pattern and len(p.split()) <= MAXGRAMS:
+        #         cleaned_phrases.add(p)
+        # phrase2instances = {p: phrase2instances[p] for p in cleaned_phrases}
+
+        # return phrase2instances
+
+
 
         #set up phrase2instances
         phrase2cnt = Counter()
         phrase2instances = defaultdict(list)
 
-        #fill in rest of code about string matching
+        if (len(tokenized_doc['sents']) == 0):
+            return phrase2instances
         
-        ##not implemented yet, use phrases from candidate and match to the raw sentence doc
+        #use phrases from candidate and match to the raw sentence doc
         keyword_processor = KeywordProcessor()
         keyword_processor.add_keywords_from_list(candidate_doc)
 
-        #very slow, patchwork until original conversion step created
-        segmented_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
-        for doc in segmented_sentences_docs:
-            if doc['_id_'] == tokenized_doc['_id_']:
-                segmented_sentences_doc = doc
-                # print(tokenized_doc['_id_'])
-                # print(raw_sentences_doc['_id_'])
-                keywords_found = []
-                for s in segmented_sentences_doc['sents']:
-                    #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
-                    keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
-                
-                # print(keywords_found)
-
-                for keywords in keywords_found:
-                    phrase = str(keywords)
-                    #made up numbers for the ids below, FIX THIS LATER
-                    phrase2instances[phrase].append([0, 0, 1])
-
-                return phrase2instances
-                #correct doc has been found, so we can exit
-                break
+        keywords_found = []
+        for s in segmented_sentences_doc['sents']:
+            #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
+            keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
         
+        for i_sent, (sent, sent_dict, candidates, sent_segmented) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'], candidate_doc['sents'], segmented_sentences_doc['sents'])):
+            widxs = sent_dict['widxs']
+            num_words = len(widxs)
+            for n in range(MINGRAMS, MAXGRAMS + 2):
+                for i_word in range(num_words - n + 1):
+                    # word = sent_segmented[i_word]
+                    l_idx = widxs[i_word]
+                    r_idx = widxs[i_word + n] - 1
+                    # if ()
+        
+        
+        for keywords in keywords_found:
+            phrase = str(keywords)
+            #made up numbers for the ids below, FIX THIS LATER
+            phrase2instances[phrase].append([0, 0, 1])
+
+
         return phrase2instances
+        
+        # for doc in segmented_sentences_docs:
+        #     if doc['_id_'] == tokenized_doc['_id_']:
+        #         segmented_sentences_doc = doc
+        #         # print(tokenized_doc['_id_'])
+        #         # print(raw_sentences_doc['_id_'])
+        #         keywords_found = []
+        #         for s in segmented_sentences_doc['sents']:
+        #             #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
+        #             keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
+                
+        #         # print(keywords_found)
+
+        #         for keywords in keywords_found:
+        #             phrase = str(keywords)
+        #             #made up numbers for the ids below, FIX THIS LATER
+        #             phrase2instances[phrase].append([0, 0, 1])
+
+        #         return phrase2instances
+        #         #correct doc has been found, so we can exit
+        #         break
+        
+        # return phrase2instances
 
     def _mark_corpus(self):
         tokenized_docs = utils.JsonLine.load(self.path_tokenized_corpus)
         tokenized_id_docs = utils.JsonLine.load(self.path_tokenized_id_corpus)
+        segmented_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
 
         ## for later, load in the raw segmented sentences and then feed into par NEW
         # raw_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
@@ -160,7 +265,7 @@ class CoreAnnotator(BaseAnnotator):
         ## We will change phrase2instances_list instead of this entire _mark_corpus method
         phrase2instances_list = utils.Process.par(
             func=CoreAnnotator._par_mine_doc_phrases_NEW,
-            iterables=list(zip(tokenized_docs, tokenized_id_docs, candidates_docs)),
+            iterables=list(zip(tokenized_docs, tokenized_id_docs, candidates_docs, segmented_sentences_docs)),
             num_processes=consts.NUM_CORES,
             desc='[CoreAnno] Mine phrases'
         )

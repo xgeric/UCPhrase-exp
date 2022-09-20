@@ -6,7 +6,7 @@ from nltk import tokenize
 import re
 
 input_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.jsonl"
-output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.trainTEST.jsonl"
+output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl"
 
 # data = JsonLine.load(input_file)
 with open(input_file) as rf:
@@ -16,23 +16,19 @@ data = [json.loads(l) for l in lines]
 output_data = []
 for entry in data :
     if (entry['bullet_point'] is None) :
-        continue
-    removed_brackets_text = entry['bullet_point'][1:-1]
-    cleaned_up_text = removed_brackets_text.replace(".,", ".")
-    further_cleaned_up_text = re.sub(",(?= [A-Z])", ". ", cleaned_up_text)
-    sentencized_text = tokenize.sent_tokenize(further_cleaned_up_text)
+        sentencized_text = []
+        # continue
+    else:
+        removed_brackets_text = entry['bullet_point'][1:-1]
+        cleaned_up_text = removed_brackets_text.replace(".,", ".")
+        further_cleaned_up_text = re.sub(",(?= [A-Z])", ". ", cleaned_up_text)
+        sentencized_text = tokenize.sent_tokenize(further_cleaned_up_text)
     output_entry = {
         '_id_': entry['asin'],
         # 'sents_length' : len(sentencized_text),
         'sents': sentencized_text
     }
     output_data.append(output_entry)
-
-# print(data[0])
-
-# output_data = {};
-# for entry in data:
-#     output_data[]
 
 with open(output_file, 'w') as jsonl_output:
     for entry in output_data:
