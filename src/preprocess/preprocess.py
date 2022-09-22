@@ -38,6 +38,8 @@ class Preprocessor:
         for tokens in tokenized_sents:
             tokens_batch = utils.get_batches(tokens, batch_size=consts.MAX_SENT_LEN)
             cleaned_tokenized_sents += tokens_batch
+        # print(type(cleaned_tokenized_sents))
+        # [print(tokens) for tokens in cleaned_tokenized_sents]
         tokenized_doc = {'_id_': docid, 'sents': [' '.join(tokens) for tokens in cleaned_tokenized_sents]}
 
         tokenized_id_doc = {'_id_': doc['_id_'], 'sents': []}
@@ -69,7 +71,10 @@ class Preprocessor:
     def _par_tokenize_candidates_doc(doc):
         # docid = doc['_id_']
         # sents = doc['sents']
-        phrases = doc
+        phrases_initial = doc
+        phrases_next = {'vals': phrases_initial}
+        phrases = phrases_next['vals']
+
 
         # tokenize
         # NOTE: add space before each raw sentence to tokenize the first token with GPT_TOKEN for phrase matching
@@ -78,7 +83,10 @@ class Preprocessor:
         for tokens in tokenized_sents:
             tokens_batch = utils.get_batches(tokens, batch_size=consts.MAX_SENT_LEN)
             cleaned_tokenized_sents += tokens_batch
-        tokenized_doc = {[' '.join(tokens) for tokens in cleaned_tokenized_sents]}
+        # tokenized_doc = {'tokens': [' '.join(tokens) for tokens in cleaned_tokenized_sents]}
+        tokenized_doc = [' '.join(tokens) for tokens in cleaned_tokenized_sents]
+
+        
 
         # tokenized_id_doc = {'_id_': doc['_id_'], 'sents': []}
         tokenized_id_doc = {}
@@ -87,8 +95,8 @@ class Preprocessor:
         #     ids = consts.LM_TOKENIZER.convert_tokens_to_ids(tokens)
         #     tokenized_id_doc['sents'].append({'ids': ids, 'widxs': widxs})
 
-        # return tokenized_doc, tokenized_id_doc
-        return tokenized_doc
+        return tokenized_doc, tokenized_id_doc
+        # return tokenized_doc
     
 
     ## our method for the candidates file
@@ -98,9 +106,9 @@ class Preprocessor:
         pool = Pool(processes=self.num_cores)
         pool_func = pool.imap(func=Preprocessor._par_tokenize_candidates_doc, iterable=candidate_docs)
         doc_tuples = list(tqdm(pool_func, total=len(candidate_docs), ncols=100, desc=f'[Tokenize] {self.path_corpus}'))
-        # tokenized_docs = [doc for doc, iddoc in doc_tuples]
+        tokenized_docs = [doc for doc, iddoc in doc_tuples]
         # # tokenized_id_docs = [iddoc for doc, iddoc in doc_tuples]
-        # pool.close()
-        # pool.join()
-        # utils.JsonLine.dump(tokenized_docs, self.path_tokenized_corpus)
+        pool.close()
+        pool.join()
+        utils.JsonLine.dump(tokenized_docs, "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/preprocess-cs_roberta_base/tokenized.water.chunk.jsonl")
         # # utils.JsonLine.dump(tokenized_id_docs, self.path_tokenized_id_corpus)
