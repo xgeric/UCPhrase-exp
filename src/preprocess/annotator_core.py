@@ -192,15 +192,15 @@ class CoreAnnotator(BaseAnnotator):
             #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
             keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
         
-        for i_sent, (sent, sent_dict, candidates, sent_segmented) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'], candidate_doc['sents'], segmented_sentences_doc['sents'])):
-            widxs = sent_dict['widxs']
-            num_words = len(widxs)
-            for n in range(MINGRAMS, MAXGRAMS + 2):
-                for i_word in range(num_words - n + 1):
-                    # word = sent_segmented[i_word]
-                    l_idx = widxs[i_word]
-                    r_idx = widxs[i_word + n] - 1
-                    # if ()
+        # for i_sent, (sent, sent_dict, candidates, sent_segmented) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'], candidate_doc['sents'], segmented_sentences_doc['sents'])):
+        #     widxs = sent_dict['widxs']
+        #     num_words = len(widxs)
+        #     for n in range(MINGRAMS, MAXGRAMS + 2):
+        #         for i_word in range(num_words - n + 1):
+        #             # word = sent_segmented[i_word]
+        #             l_idx = widxs[i_word]
+        #             r_idx = widxs[i_word + n] - 1
+        #             # if ()
         
         
         for keywords in keywords_found:

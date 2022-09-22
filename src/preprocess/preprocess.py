@@ -62,3 +62,45 @@ class Preprocessor:
         pool.join()
         utils.JsonLine.dump(tokenized_docs, self.path_tokenized_corpus)
         utils.JsonLine.dump(tokenized_id_docs, self.path_tokenized_id_corpus)
+
+
+    ## Our par method for the candidates file
+    @staticmethod
+    def _par_tokenize_candidates_doc(doc):
+        # docid = doc['_id_']
+        # sents = doc['sents']
+        phrases = doc
+
+        # tokenize
+        # NOTE: add space before each raw sentence to tokenize the first token with GPT_TOKEN for phrase matching
+        tokenized_sents = [consts.LM_TOKENIZER.tokenize(' ' + s, add_special_tokens=False) for s in phrases]
+        cleaned_tokenized_sents = []
+        for tokens in tokenized_sents:
+            tokens_batch = utils.get_batches(tokens, batch_size=consts.MAX_SENT_LEN)
+            cleaned_tokenized_sents += tokens_batch
+        tokenized_doc = {[' '.join(tokens) for tokens in cleaned_tokenized_sents]}
+
+        # tokenized_id_doc = {'_id_': doc['_id_'], 'sents': []}
+        tokenized_id_doc = {}
+        # for tokens in cleaned_tokenized_sents:
+        #     widxs = [i for i, token in enumerate(tokens) if token.startswith(consts.GPT_TOKEN)]  # the indices of start of words
+        #     ids = consts.LM_TOKENIZER.convert_tokens_to_ids(tokens)
+        #     tokenized_id_doc['sents'].append({'ids': ids, 'widxs': widxs})
+
+        # return tokenized_doc, tokenized_id_doc
+        return tokenized_doc
+    
+
+    ## our method for the candidates file
+    def tokenize_candidate_doc(self):
+
+        candidate_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl")
+        pool = Pool(processes=self.num_cores)
+        pool_func = pool.imap(func=Preprocessor._par_tokenize_candidates_doc, iterable=candidate_docs)
+        doc_tuples = list(tqdm(pool_func, total=len(candidate_docs), ncols=100, desc=f'[Tokenize] {self.path_corpus}'))
+        # tokenized_docs = [doc for doc, iddoc in doc_tuples]
+        # # tokenized_id_docs = [iddoc for doc, iddoc in doc_tuples]
+        # pool.close()
+        # pool.join()
+        # utils.JsonLine.dump(tokenized_docs, self.path_tokenized_corpus)
+        # # utils.JsonLine.dump(tokenized_id_docs, self.path_tokenized_id_corpus)

@@ -78,6 +78,7 @@ class Experiment:
         # conv = AmazonDataConverter()
         # conv.convert()
         # initial_data_conversion
+        self.train_preprocessor.tokenize_candidate_doc()
         self.train_preprocessor.tokenize_corpus()
         self.train_annotator.mark_corpus()
 
