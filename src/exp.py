@@ -82,8 +82,8 @@ class Experiment:
         self.train_preprocessor.tokenize_corpus()
         self.train_annotator.mark_corpus()
 
-        # path_sampled_train_data = self.train_annotator.sample_train_data()
-        # self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
+        path_sampled_train_data = self.train_annotator.sample_train_data()
+        self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
 
     def select_best_epoch(self):
         paths_ckpt = [p for p in self.trainer.output_dir.iterdir() if p.suffix == '.ckpt']
