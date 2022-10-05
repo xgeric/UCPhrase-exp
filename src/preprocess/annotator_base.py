@@ -20,7 +20,11 @@ class BaseAnnotator:
     def _par_sample_train_data(marked_doc):
         sents = marked_doc['sents']
         for sent in sents:
-            phrases = sent['phrases']
+            try:
+                phrases = sent['phrases']
+            except:
+                # print(sent)
+                return marked_doc
             assert phrases
             positive_spans = [tuple(phrase[0]) for phrase in phrases]
             num_positive = len(positive_spans)

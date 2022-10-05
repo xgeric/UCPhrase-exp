@@ -1,0 +1,48 @@
+import json
+# # import utils
+# import tqdm
+# from pathlib import Path
+# from nltk import tokenize
+# import re
+# import numpy as np
+
+input_file_asins = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.asin.txt"
+input_file_candidates = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl"
+output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.candidateAsins.jsonl"
+
+# input_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.jsonl"
+# output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl"
+
+# data = JsonLine.load(input_file)
+# with open(input_file) as rf:
+#     lines = rf.read().splitlines()
+# data = [json.loads(l) for l in lines]
+
+with open(input_file_asins) as rf:
+    lines = rf.read().splitlines()
+data_asins = [l for l in lines]
+
+with open(input_file_candidates) as rf:
+    lines = rf.read().splitlines()
+data_candidates = [json.loads(l) for l in lines]
+
+# print(len(data_asins))
+# print(data_asins[0])
+# print(len(data_candidates))
+# print(data_candidates[0])
+assert len(data_asins) == len(data_candidates)
+
+output_data = []
+for i in range(len(data_asins)):
+    asin = data_asins[i]
+    candidates = data_candidates[i]
+    output_entry = {
+        '_id_': asin,
+        'candidates': candidates
+    }
+    output_data.append(output_entry)
+
+with open(output_file, 'w') as jsonl_output:
+    for entry in output_data:
+        json.dump(entry, jsonl_output)
+        jsonl_output.write('\n')
