@@ -24,7 +24,7 @@ class DataConfig:
         dir_config = path_config_json.parent
 
         self.lm_name = config_dict['lm_name']
-        # self.path_test = dir_config / config_dict['path_test']
+        self.path_test = dir_config / config_dict['path_test']
         self.path_train = dir_config / config_dict['path_train']
         self.path_phrase = dir_config / config_dict['path_phrase']
         # self.path_tagging_docs = dir_config / config_dict['path_tagging_docs']

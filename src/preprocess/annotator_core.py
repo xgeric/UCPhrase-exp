@@ -101,79 +101,8 @@ class CoreAnnotator(BaseAnnotator):
                 break
         if (len(candidates) == 0):
             return defaultdict(list)
-        # return phrase2instances
 
-
-        
-        # for candidate in candidate_doc:
-        #     print(candidate['candidates'])
-        # return phrase2instances
-
-        ##THIS IS OAMINE-EXTENSION ADAPTATION OF UCPHRASE
-        #bug fix candidate doc
-        # phrases_initial = candidate_doc
-        # phrases_next = {'vals': phrases_initial}
-        # candidate_doc = phrases_next['vals']
-
-        # keywords_found = []
-        # #use phrases from candidate and match to the raw sentence doc
-        # keyword_processor = KeywordProcessor()
-        # keyword_processor.add_keywords_from_list(candidate_doc)
-
-        # phrase2cnt = Counter()
-        # phrase2instances = defaultdict(list)
-        # for i_sent, (sent, sent_dict, candidates, sent_segmented) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'], candidate_doc, segmented_sentences_doc['sents'])):
-        #     tokens = sent.lower().split()
-        #     widxs = sent_dict['widxs']
-        #     num_words = len(widxs)
-        #     widxs.append(len(tokens))  # for convenience
-        #     keywords_found.extend(keyword_processor.extract_keywords(sent_segmented.lower()))
-        #     # print(keywords_found)
-        #     for n in range(MINGRAMS, MAXGRAMS + 2):
-        #         for i_word in range(num_words - n + 1):
-        #             l_idx = widxs[i_word]
-        #             r_idx = widxs[i_word + n] - 1
-        #             ngram = tuple(tokens[l_idx: r_idx + 1])
-        #             ngram = tuple(''.join(ngram).split(consts.GPT_TOKEN.lower())[1:])
-        #             # if (ngram == )
-        #             # print(tokens[l_idx: r_idx + 1])
-        #             # if is_valid_ngram(ngram):
-        #             for keyword in keywords_found:
-        #                 if keyword in ngram:
-        #                     phrase = ' '.join(ngram)
-        #                     # print(phrase)
-        #                     phrase2cnt[phrase] += 1
-        #                     phrase2instances[phrase].append([i_sent, l_idx, r_idx])
-        # phrases = [phrase for phrase, count in phrase2cnt.items() if count >= MINCOUNT]
-        # phrases = sorted(phrases, key=lambda p: len(p), reverse=True)
-        # cleaned_phrases = set()
-        # for p in phrases:
-        #     has_longer_pattern = False
-        #     for cp in cleaned_phrases:
-        #         if p in cp:
-        #             has_longer_pattern = True
-        #             break
-        #     if not has_longer_pattern and len(p.split()) <= MAXGRAMS:
-        #         cleaned_phrases.add(p)
-        #     phrase2instances = {p: phrase2instances[p] for p in cleaned_phrases}
-
-        #     return phrase2instances
-        # return phrase2instances
-
-
-
-        # keyword_processor = KeywordProcessor()
-        # keyword_processor.add_keywords_from_list(candidate_doc['candidates'])
-
-        # keywords_found = []
-        # for s in segmented_sentences_doc['sents']:
-        #     #not exactly sure on how extend works, so if keywords overlap this might be destroying that info
-        #     keywords_found.extend(keyword_processor.extract_keywords(s.lower()))
-
-        # for keyword in keywords_found:
-        #     print(keyword)
-
-        ##THIS IS JUST UCPHRASE
+        ##THIS IS UCPHRASE AND OAMINE
         phrase2cnt = Counter()
         phrase2instances = defaultdict(list)
         for i_sent, (sent, sent_dict) in enumerate(zip(tokenized_doc['sents'], tokenized_id_doc['sents'])):
@@ -191,8 +120,6 @@ class CoreAnnotator(BaseAnnotator):
                         phrase = ' '.join(ngram)
                         # print(" ".join(ngram) + " is valid phrase")
                         for candidate in candidates:
-                            # print("candidate is " + candidate)
-                            # print(phrase + " is valid phrase")
                             if (candidate in phrase):
                                 # print(ngram)
                                 phrase2cnt[phrase] += 1
