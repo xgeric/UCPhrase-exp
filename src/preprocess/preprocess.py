@@ -102,7 +102,9 @@ class Preprocessor:
     ## our method for the candidates file
     def tokenize_candidate_doc(self):
 
-        candidate_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl")
+        ## CHANGE FOR PT
+
+        candidate_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpCoffee/coffee.chunk.jsonl")
         pool = Pool(processes=self.num_cores)
         pool_func = pool.imap(func=Preprocessor._par_tokenize_candidates_doc, iterable=candidate_docs)
         doc_tuples = list(tqdm(pool_func, total=len(candidate_docs), ncols=100, desc=f'[Tokenize] {self.path_corpus}'))
@@ -110,5 +112,5 @@ class Preprocessor:
         # # tokenized_id_docs = [iddoc for doc, iddoc in doc_tuples]
         pool.close()
         pool.join()
-        utils.JsonLine.dump(tokenized_docs, "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/preprocess-cs_roberta_base/tokenized.water.chunk.jsonl")
+        utils.JsonLine.dump(tokenized_docs, "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpCoffee/standard/preprocess-cs_roberta_base/tokenized.coffee.chunk.jsonl")
         # # utils.JsonLine.dump(tokenized_id_docs, self.path_tokenized_id_corpus)

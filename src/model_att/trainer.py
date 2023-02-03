@@ -104,9 +104,9 @@ class AttmapTrainer:
                     pred_labels.extend([int(p > .5) for p in pred_probs.numpy().tolist()])
             valid_f1 = f1_score(gold_labels, pred_labels, average="micro")
             utils.Log.info(f'valid f1: {valid_f1}')
-            if valid_f1 < best_valid_f1:
-                utils.Log.info(f'Stop training. Best epoch: {epoch - 1}')
-                break
+            # if valid_f1 < best_valid_f1:
+            #     utils.Log.info(f'Stop training. Best epoch: {epoch - 1}')
+            #     break
             best_epoch = epoch - 1
             best_valid_f1 = valid_f1
 

@@ -40,6 +40,7 @@ class BaseAnnotator:
         return marked_doc
 
     def sample_train_data(self):
+        print(self.path_marked_corpus)
         assert utils.IO.is_valid_file(self.path_marked_corpus)
 
         path_output = self.dir_output / f'sampled.neg{consts.NEGATIVE_RATIO}.{self.path_marked_corpus.name}'

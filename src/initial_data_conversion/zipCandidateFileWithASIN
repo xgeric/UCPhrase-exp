@@ -6,9 +6,9 @@ import json
 # import re
 # import numpy as np
 
-input_file_asins = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.asin.txt"
-input_file_candidates = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.chunk.jsonl"
-output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.candidateAsins.jsonl"
+input_file_asins = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/shoes.asin.txt"
+input_file_candidates = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/shoes.chunk.jsonl"
+output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/standard/shoes.candidateAsins.jsonl"
 
 # input_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.jsonl"
 # output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl"

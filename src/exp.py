@@ -74,7 +74,8 @@ class Experiment:
         #         model=model
         #     )
 
-    def train(self, num_epochs=20):
+    # def train(self, num_epochs=20):
+    def train(self, num_epochs=40):
         # conv = AmazonDataConverter()
         # conv.convert()
         # initial_data_conversion
@@ -83,7 +84,7 @@ class Experiment:
         self.train_annotator.mark_corpus()
 
         path_sampled_train_data = self.train_annotator.sample_train_data()
-        print(path_sampled_train_data)
+        # print(path_sampled_train_data)
 
         self.trainer.train(path_sampled_train_data=path_sampled_train_data, num_epochs=num_epochs)
 
@@ -137,10 +138,10 @@ class Experiment:
                 use_cache=True,
                 use_tqdm=True
             )
-            # evaluator = evaluate.SentEvaluator()
-            # paths_gold = self.data_config.paths_tagging_human
-            # print(f'Evaluate {path_decoded_doc2sents}')
-            # print(evaluator.evaluate(path_decoded_doc2sents, paths_doc2golds=paths_gold))
+            evaluator = evaluate.SentEvaluator()
+            paths_gold = self.data_config.paths_tagging_human
+            print(f'Evaluate {path_decoded_doc2sents}')
+            print(evaluator.evaluate(path_decoded_doc2sents, paths_doc2golds=paths_gold))
         else:
             pass
             path_decoded_doc2cands = model_base.BaseModel.get_doc2cands(
@@ -150,16 +151,14 @@ class Experiment:
                 use_cache=True,
                 use_tqdm=True
             )
-            # evaluator = evaluate.Evaluator()
-            # print(f'Evaluate {path_decoded_doc2cands}')
-            # print(evaluator.evaluate(path_doc2cands=path_decoded_doc2cands))
+            evaluator = evaluate.Evaluator()
+            print(f'Evaluate {path_decoded_doc2cands}')
+            print(evaluator.evaluate(path_doc2cands=path_decoded_doc2cands))
 
 
 if __name__ == '__main__':
     exp = Experiment()
     exp.train()
-    # best_epoch = exp.select_best_epoch()
-    # exp.predict(epoch=best_epoch, for_tagging=True)
-    # exp.predict(epoch=best_epoch, for_tagging=False)
-
-# create tagging docs
+    best_epoch = exp.select_best_epoch()
+    exp.predict(epoch=best_epoch, for_tagging=True)
+    exp.predict(epoch=best_epoch, for_tagging=False)

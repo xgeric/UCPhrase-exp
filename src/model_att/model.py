@@ -97,9 +97,9 @@ class AttmapModel(BaseModel):
         path_prefix = f'{max_num_docs}docs.' * (max_num_docs is not None)
         path_output = dir_output / (path_prefix + path_predict_docs.name)
         dir_output.mkdir(exist_ok=True)
-        if use_cache and utils.IO.is_valid_file(path_output):
-            print(f'[ModelPredict] Use cache: {path_output}')
-            return path_output
+        # if use_cache and utils.IO.is_valid_file(path_output):
+        #     print(f'[ModelPredict] Use cache: {path_output}')
+        #     return path_output
         path_output.parent.mkdir(exist_ok=True)
 
         predict_docs = utils.Pickle.load(path_predict_docs)

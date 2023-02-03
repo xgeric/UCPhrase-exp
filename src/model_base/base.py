@@ -84,9 +84,9 @@ class BaseModel(nn.Module):
         output_dir = Path(output_dir)
         output_dir.mkdir(exist_ok=True)
         path_output = output_dir / (f'doc2sents-{threshold}-' + path_predicted_docs.stem + '.json')
-        if use_cache and utils.IO.is_valid_file(path_output):
-            print(f'[Decode] Use cache: {path_output}')
-            return path_output
+        # if use_cache and utils.IO.is_valid_file(path_output):
+        #     print(f'[Decode] Use cache: {path_output}')
+        #     return path_output
         utils.Log.info(f'Decode: {path_output}')
         path_predicted_docs = Path(path_predicted_docs)
         predicted_docs = utils.Pickle.load(path_predicted_docs)
@@ -122,9 +122,9 @@ class BaseModel(nn.Module):
     def get_doc2cands(path_predicted_docs, output_dir, expected_num_cands_per_doc, use_cache, use_tqdm):
         output_dir = Path(output_dir)
         path_output = output_dir / (f'doc2cands-{expected_num_cands_per_doc}-' + path_predicted_docs.stem + '.json')
-        if use_cache and utils.IO.is_valid_file(path_output):
-            print(f'[Doc2cands] Use cache: {path_output}')
-            return path_output
+        # if use_cache and utils.IO.is_valid_file(path_output):
+        #     print(f'[Doc2cands] Use cache: {path_output}')
+        #     return path_output
         utils.Log.info(f'Doc2cands: {path_output}')
         path_predicted_docs = Path(path_predicted_docs)
         predicted_docs = utils.Pickle.load(path_predicted_docs)
@@ -136,8 +136,16 @@ class BaseModel(nn.Module):
         for _ in range(20):
             threshold = (threshold_l + threshold_r) / 2
             doc2cands = {doc['_id_']: BaseModel._par_get_doc_cands(doc, threshold) for doc in to_iterate}
-            num_cands = [len(cands) for doc, cands in doc2cands.items() if doc in consts.DOCIDS_WITH_GOLD]
-            average_num_cands = utils.mean(num_cands)
+            
+            ##seems to be some sort of threshold
+            ## set DOC IDS with GOLD to all docs
+            num_cands = [len(cands) for doc, cands in doc2cands.items()]
+            # num_cands = [len(cands) for doc, cands in doc2cands.items() if doc in consts.DOCIDS_WITH_GOLD]
+            average_num_cands = 0
+            try:
+                average_num_cands = utils.mean(num_cands)
+            except:
+                average_num_cands = 0
             print(f'threshold={threshold:.3f} num_cands={average_num_cands}')
             if min_average_num_cands <= average_num_cands <= max_average_num_cands:
                 print('threshold OK!')

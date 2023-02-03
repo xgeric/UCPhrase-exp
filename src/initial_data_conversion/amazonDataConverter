@@ -5,8 +5,8 @@ from pathlib import Path
 from nltk import tokenize
 import re
 
-input_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/water.jsonl"
-output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl"
+input_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/shoes.jsonl"
+output_file = "/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/standard/shoes.train.jsonl"
 
 # data = JsonLine.load(input_file)
 with open(input_file) as rf:

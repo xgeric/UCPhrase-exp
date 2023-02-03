@@ -102,10 +102,10 @@ class FeatureExtractor(BaseFeatureExtractor):
 
         predict_name = 'predict.batch.float16.' + f'{max_num_docs}docs.' * (max_num_docs is not None)
         path_output = (test_feature_dir / path_marked_corpus.name.replace('marked.', predict_name)).with_suffix('.pk')
-        print(path_output)
-        if self.use_cache and utils.IO.is_valid_file(path_output):
-            print(f'[FeatureExtractor] Use cache: {path_output}')
-            return path_output
+        # print(path_output)
+        # if self.use_cache and utils.IO.is_valid_file(path_output):
+        #     print(f'[FeatureExtractor] Use cache: {path_output}')
+        #     return path_output
 
         marked_docs = utils.JsonLine.load(path_marked_corpus)
         marked_docs = marked_docs[:max_num_docs] if max_num_docs is not None else marked_docs

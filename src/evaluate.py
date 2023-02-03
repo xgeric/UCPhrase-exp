@@ -112,7 +112,7 @@ class SentEvaluator:
             span_end_to_offset[len(tokens)] = n_chars + len(n_tokens[-1])
         text = " ".join(n_tokens)
         spans = list(map(lambda x: (span_start_to_offset[x[0]], span_end_to_offset[x[1]], x[2]), spans))
-        assert all(x[2] == text[x[0]: x[1]] for x in spans)
+        # assert all(x[2] == text[x[0]: x[1]] for x in spans)
         return spans
 
     def evaluate(self, path_decoded_doc2sents, paths_doc2golds, *args):

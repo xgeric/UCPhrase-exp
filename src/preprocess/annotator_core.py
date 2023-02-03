@@ -79,7 +79,8 @@ class CoreAnnotator(BaseAnnotator):
     @staticmethod
     def _par_mine_doc_phrases_NEW(doc_tuple):
         #not sure if necessary - take in input information and make sure IDs and number of docs match up
-        tokenized_doc, tokenized_id_doc, Ecandidate_doc, segmented_sentences_doc = doc_tuple
+        # tokenized_doc, tokenized_id_doc, candidate_doc, segmented_sentences_doc = doc_tuple
+        tokenized_doc, tokenized_id_doc = doc_tuple
 
         assert tokenized_doc['_id_'] == tokenized_id_doc['_id_']        
         assert len(tokenized_doc['sents']) == len(tokenized_id_doc['sents'])
@@ -90,7 +91,10 @@ class CoreAnnotator(BaseAnnotator):
         phrase2cnt = Counter()
         phrase2instances = defaultdict(list)
 
-        candidates_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.candidateAsins.jsonl")
+
+        ## CHANGE THIS FOR PT
+
+        candidates_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpShoes/standard/shoes.candidateAsins.jsonl")
         candidate_doc = ""
         candidates = []
         for doc in candidates_docs:
@@ -205,13 +209,17 @@ class CoreAnnotator(BaseAnnotator):
     def _mark_corpus(self):
         tokenized_docs = utils.JsonLine.load(self.path_tokenized_corpus)
         tokenized_id_docs = utils.JsonLine.load(self.path_tokenized_id_corpus)
-        segmented_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
+
+        ## CHANGE FOR PT
+
+        # segmented_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpCoffee/standard/kpCoffee.train.jsonl")
+        # segmented_sentences_docs = utils.JsonLine.load(self.path_train)
 
         ## for later, load in the raw segmented sentences and then feed into par NEW
         # raw_sentences_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.train.jsonl")
 
         #for later, load in the  sentences and then feed into par NEW
-        candidates_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpWater/standard/kpWater.candidateAsins.jsonl")
+        # candidates_docs = utils.JsonLine.load("/shared/data2/ppillai3/test/UCPhrase-exp/data/kpCoffee/standard/kpCoffee.candidateAsins.jsonl")
 
         # phrase2instances_list = utils.Process.par(
         #     func=CoreAnnotator._par_mine_doc_phrases,
@@ -233,7 +241,7 @@ class CoreAnnotator(BaseAnnotator):
         ## We will change phrase2instances_list instead of this entire _mark_corpus method
         phrase2instances_list = utils.Process.par(
             func=CoreAnnotator._par_mine_doc_phrases_NEW,
-            iterables=list(zip(tokenized_docs, tokenized_id_docs, candidates_docs, segmented_sentences_docs)),
+            iterables=list(zip(tokenized_docs, tokenized_id_docs)),
             num_processes=consts.NUM_CORES,
             desc='[CoreAnno] Mine phrases'
         )
